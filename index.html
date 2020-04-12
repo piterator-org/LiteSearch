@@ -78,7 +78,12 @@
     <div class="holders">
         <span class="button teal engines" id="moegirl" onclick="moegirl()">萌娘百科</span>
         <span class="button teal engines" id="dnspod" onclick="dnspod()">DNSPod 域名注册</span>
+    </div>
+    <div style="height: 5px; box-sizing: border-box;"></div>
+    <div class="holders">
         <span class="button teal engines" id="wanwang" onclick="wanwang()">万网域名注册</span>
+        <span class="button teal engines" id="zhihu" onclick="zhihu()">知乎</span>
+        <span class="button teal engines" id="bilibili" onclick="bilibili()">哔哩哔哩</span>
     </div>
     <script>
         /*
@@ -110,6 +115,8 @@
             else if(engine_id==9)url_jump="https://zh.moegirl.org/index.php?search="+document.getElementById("search_box").value;
             else if(engine_id==10)url_jump="https://buy.cloud.tencent.com/domain?domain="+document.getElementById("search_box").value;
             else if(engine_id==11)url_jump="https://wanwang.aliyun.com/domain/searchresult/#/?keyword="+document.getElementById("search_box").value;
+            else if(engine_id==12)url_jump="https://www.zhihu.com/search?type=content&q="+document.getElementById("search_box").value;
+            else if(engine_id==13)url_jump="https://search.bilibili.com/all?keyword="+document.getElementById("search_box").value;
             else url_jump="https://www.oier.fun/";
             window.open(url_jump,"_blank");
         }
@@ -172,6 +179,16 @@
             engine_id=11;
             $(".engines").removeClass("reversal");
             $("#wanwang").addClass("reversal");
+        }
+        function zhihu(){
+            engine_id=12;
+            $(".engines").removeClass("reversal");
+            $("#zhihu").addClass("reversal");
+        }
+        function bilibili(){
+            engine_id=13;
+            $(".engines").removeClass("reversal");
+            $("#bilibili").addClass("reversal");
         }
     </script>
 </body>
