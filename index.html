@@ -68,6 +68,12 @@
         <span class="button teal engines" id="sogou" onclick="sogou()">搜狗搜索</span>
         <span class="button teal engines" id="github" onclick="github()">GitHub</span>
     </div>
+    <div style="height: 5px; box-sizing: border-box;"></div>
+    <div class="holders">
+        <span class="button teal engines" id="gitee" onclick="gitee()">码云 Gitee</span>
+        <span class="button teal engines" id="oschina" onclick="oschina()">OSCHINA</span>
+        <span class="button teal engines" id="youdao" onclick="youdao()">有道词典</span>
+    </div>
     <script>
         /*
         function box_onfocus(){
@@ -92,6 +98,9 @@
             else if(engine_id==3)url_jump="https://www.so.com/s?q="+document.getElementById("search_box").value;
             else if(engine_id==4)url_jump="https://www.sogou.com/web?query="+document.getElementById("search_box").value;
             else if(engine_id==5)url_jump="https://github.com/search?q="+document.getElementById("search_box").value;
+            else if(engine_id==6)url_jump="https://search.gitee.com/?q="+document.getElementById("search_box").value;
+            else if(engine_id==7)url_jump="https://www.oschina.net/search?scope=all&q="+document.getElementById("search_box").value;
+            else if(engine_id==8)url_jump="http://www.youdao.com/w/"+document.getElementById("search_box").value;
             else url_jump="https://www.oier.fun/";
             window.open(url_jump,"_blank");
         }
@@ -124,6 +133,21 @@
             engine_id=5;
             $(".engines").removeClass("reversal");
             $("#github").addClass("reversal");
+        }
+        function gitee(){
+            engine_id=6;
+            $(".engines").removeClass("reversal");
+            $("#gitee").addClass("reversal");
+        }
+        function oschina(){
+            engine_id=7;
+            $(".engines").removeClass("reversal");
+            $("#oschina").addClass("reversal");
+        }
+        function youdao(){
+            engine_id=8;
+            $(".engines").removeClass("reversal");
+            $("#youdao").addClass("reversal");
         }
     </script>
 </body>
