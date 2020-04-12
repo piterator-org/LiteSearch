@@ -19,7 +19,6 @@
             width: 100%;
             display: block;
             margin-top: .6em;
-            margin-bottom: .6em;
             border-radius: 0.8em;
             border: 1.5px solid rgb(0,181,173);
             color: rgb(0,181,173);
@@ -48,42 +47,58 @@
             box-sizing: border-box;
             font-weight: 100;
         }
+        #engines_fold{
+            height: 42px;
+            margin-top: .6em;
+            width: 360px;
+            border: 1.5px solid rgb(0,181,173);
+            box-sizing: border-box;
+            font-weight: 100;
+        }
+        .engines_holders{
+            height: 47px;
+        }
     </style>
 </head>
 <body onkeypress="if(event.keyCode==13)start()">
     <div style="height: 100px; box-sizing: border-box;"></div>
     <h1 class="header teal center">轻搜索 Light Search</h1>
     <div class="holders">
-        <input id="search_box" name="search_box" placeholder="搜索无需繁琐" onfocus="box_onfocus()" onblur="box_onblur()" />
+        <input id="search_box" name="search_box" placeholder="搜索无需繁琐" />
         <span class="button teal reversal" id="search_btn" onclick="start()">开始</span>
     </div>
-    <div class="holders">
+    <div class="holders engines_holders" id="enghld_1">
+        <div style="height: 5px; box-sizing: border-box;"></div>
         <span class="button teal reversal engines" id="baidu" onclick="baidu()">百度</span>
         <span class="button teal engines" id="bing" onclick="bing()">必应国内版</span>
         <span class="button teal engines" id="bing_gob" onclick="bing_gob()">必应国际版</span>
     </div>
-    <div style="height: 5px; box-sizing: border-box;"></div>
-    <div class="holders">
+    <div class="holders engines_holders" id="enghld_2">
+        <div style="height: 5px; box-sizing: border-box;"></div>
         <span class="button teal engines" id="_360" onclick="_360()">360搜索</span>
         <span class="button teal engines" id="sogou" onclick="sogou()">搜狗搜索</span>
         <span class="button teal engines" id="github" onclick="github()">GitHub</span>
     </div>
-    <div style="height: 5px; box-sizing: border-box;"></div>
-    <div class="holders">
+    <div class="holders engines_holders" id="enghld_3">
+        <div style="height: 5px; box-sizing: border-box;"></div>
         <span class="button teal engines" id="gitee" onclick="gitee()">码云 Gitee</span>
         <span class="button teal engines" id="oschina" onclick="oschina()">OSCHINA</span>
         <span class="button teal engines" id="youdao" onclick="youdao()">有道词典</span>
     </div>
-    <div style="height: 5px; box-sizing: border-box;"></div>
-    <div class="holders">
+    <div class="holders engines_holders" id="enghld_4">
+        <div style="height: 5px; box-sizing: border-box;"></div>
         <span class="button teal engines" id="moegirl" onclick="moegirl()">萌娘百科</span>
         <span class="button teal engines" id="dnspod" onclick="dnspod()">DNSPod 域名注册</span>
     </div>
-    <div style="height: 5px; box-sizing: border-box;"></div>
-    <div class="holders">
+    <div class="holders engines_holders" id="enghld_5">
+        <div style="height: 5px; box-sizing: border-box;"></div>
         <span class="button teal engines" id="wanwang" onclick="wanwang()">万网域名注册</span>
         <span class="button teal engines" id="zhihu" onclick="zhihu()">知乎</span>
         <span class="button teal engines" id="bilibili" onclick="bilibili()">哔哩哔哩</span>
+    </div>
+    <div class="holders">
+        <div style="height: 5px; box-sizing: border-box;"></div>
+        <span class="button teal reversal" id="engines_fold" onclick="engines_fold()">折叠</span>
     </div>
     <script>
         /*
@@ -100,7 +115,7 @@
             $('#search_btn').css('border-radius',' 0px 12px 12px 0px');
         }
         */
-        var engine_id=0;
+        var engine_id=0,engine_holder_id=1,has_folded=0;
         function start(){
             var url_jump;
             if(engine_id==0)url_jump="https://www.baidu.com/s?ie=UTF-8&wd="+document.getElementById("search_box").value;
@@ -120,73 +135,86 @@
             else url_jump="https://www.oier.fun/";
             window.open(url_jump,"_blank");
         }
+        function engines_fold(){
+            has_folded=1-has_folded;
+            if(has_folded){
+                $("#engines_fold").html("展开");
+                $("#engines_fold").removeClass("reversal");
+                $(".engines_holders").css("display","none");
+                $("#enghld_"+engine_holder_id).css("display","block");
+            }else{
+                $("#engines_fold").html("折叠");
+                $("#engines_fold").addClass("reversal");
+                $(".engines_holders").css("display","block");
+            }
+        }
         function baidu(){
-            engine_id=0;
+            engine_id=0;engine_holder_id=1;
             $(".engines").removeClass("reversal");
             $("#baidu").addClass("reversal");
         }
         function bing(){
-            engine_id=1;
+            engine_id=1;engine_holder_id=1;
             $(".engines").removeClass("reversal");
             $("#bing").addClass("reversal");
         }
         function bing_gob(){
-            engine_id=2;
+            engine_id=2;engine_holder_id=1;
             $(".engines").removeClass("reversal");
             $("#bing_gob").addClass("reversal");
         }
         function _360(){
-            engine_id=3;
+            engine_id=3;engine_holder_id=2;
             $(".engines").removeClass("reversal");
             $("#_360").addClass("reversal");
         }
         function sogou(){
-            engine_id=4;
+            engine_id=4;engine_holder_id=2;
             $(".engines").removeClass("reversal");
             $("#sogou").addClass("reversal");
         }
         function github(){
-            engine_id=5;
+            engine_id=5;engine_holder_id=2;
             $(".engines").removeClass("reversal");
             $("#github").addClass("reversal");
         }
         function gitee(){
-            engine_id=6;
+            engine_id=6;engine_holder_id=3;
             $(".engines").removeClass("reversal");
             $("#gitee").addClass("reversal");
         }
         function oschina(){
-            engine_id=7;
+            engine_id=7;engine_holder_id=3;
             $(".engines").removeClass("reversal");
             $("#oschina").addClass("reversal");
         }
         function youdao(){
-            engine_id=8;
+            engine_id=8;engine_holder_id=3;
             $(".engines").removeClass("reversal");
             $("#youdao").addClass("reversal");
         }
         function moegirl(){
-            engine_id=9;
+            engine_id=9;engine_holder_id=4;
             $(".engines").removeClass("reversal");
             $("#moegirl").addClass("reversal");
         }
         function dnspod(){
-            engine_id=10;
+            engine_id=10;engine_holder_id=4;
             $(".engines").removeClass("reversal");
             $("#dnspod").addClass("reversal");
         }
         function wanwang(){
-            engine_id=11;
+            engine_id=11;engine_holder_id=5;
             $(".engines").removeClass("reversal");
             $("#wanwang").addClass("reversal");
         }
         function zhihu(){
-            engine_id=12;
+            engine_id=12;engine_holder_id=5;
             $(".engines").removeClass("reversal");
             $("#zhihu").addClass("reversal");
         }
         function bilibili(){
-            engine_id=13;
+            engine_id=13;engine_holder_id=5;
             $(".engines").removeClass("reversal");
             $("#bilibili").addClass("reversal");
         }
