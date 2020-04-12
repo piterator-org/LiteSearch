@@ -74,6 +74,12 @@
         <span class="button teal engines" id="oschina" onclick="oschina()">OSCHINA</span>
         <span class="button teal engines" id="youdao" onclick="youdao()">有道词典</span>
     </div>
+    <div style="height: 5px; box-sizing: border-box;"></div>
+    <div class="holders">
+        <span class="button teal engines" id="moegirl" onclick="moegirl()">萌娘百科</span>
+        <span class="button teal engines" id="dnspod" onclick="dnspod()">DNSPod 域名注册</span>
+        <span class="button teal engines" id="wanwang" onclick="wanwang()">万网域名注册</span>
+    </div>
     <script>
         /*
         function box_onfocus(){
@@ -101,6 +107,9 @@
             else if(engine_id==6)url_jump="https://search.gitee.com/?q="+document.getElementById("search_box").value;
             else if(engine_id==7)url_jump="https://www.oschina.net/search?scope=all&q="+document.getElementById("search_box").value;
             else if(engine_id==8)url_jump="https://www.youdao.com/w/"+document.getElementById("search_box").value;
+            else if(engine_id==9)url_jump="https://zh.moegirl.org/index.php?search="+document.getElementById("search_box").value;
+            else if(engine_id==10)url_jump="https://buy.cloud.tencent.com/domain?domain="+document.getElementById("search_box").value;
+            else if(engine_id==11)url_jump="https://wanwang.aliyun.com/domain/searchresult/#/?keyword="+document.getElementById("search_box").value;
             else url_jump="https://www.oier.fun/";
             window.open(url_jump,"_blank");
         }
@@ -148,6 +157,21 @@
             engine_id=8;
             $(".engines").removeClass("reversal");
             $("#youdao").addClass("reversal");
+        }
+        function moegirl(){
+            engine_id=9;
+            $(".engines").removeClass("reversal");
+            $("#moegirl").addClass("reversal");
+        }
+        function dnspod(){
+            engine_id=10;
+            $(".engines").removeClass("reversal");
+            $("#dnspod").addClass("reversal");
+        }
+        function wanwang(){
+            engine_id=11;
+            $(".engines").removeClass("reversal");
+            $("#wanwang").addClass("reversal");
         }
     </script>
 </body>
