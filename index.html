@@ -96,6 +96,12 @@
         <span class="button teal engines" id="zhihu" onclick="zhihu()">知乎</span>
         <span class="button teal engines" id="bilibili" onclick="bilibili()">哔哩哔哩</span>
     </div>
+    <div class="holders engines_holders" id="enghld_6">
+        <div style="height: 5px; box-sizing: border-box;"></div>
+        <span class="button teal engines" id="luogu" onclick="luogu()">洛谷</span>
+        <span class="button teal engines" id="csdn" onclick="csdn()">CSDN</span>
+        <span class="button teal engines" id="taobao" onclick="taobao()">淘宝网</span>
+    </div>
     <div class="holders">
         <div style="height: 5px; box-sizing: border-box;"></div>
         <span class="button teal reversal" id="engines_fold" onclick="engines_fold()">折叠</span>
@@ -132,6 +138,9 @@
             else if(engine_id==11)url_jump="https://wanwang.aliyun.com/domain/searchresult/#/?keyword="+document.getElementById("search_box").value;
             else if(engine_id==12)url_jump="https://www.zhihu.com/search?type=content&q="+document.getElementById("search_box").value;
             else if(engine_id==13)url_jump="https://search.bilibili.com/all?keyword="+document.getElementById("search_box").value;
+            else if(engine_id==14)url_jump="https://www.luogu.com.cn/problem/list?keyword="+document.getElementById("search_box").value;
+            else if(engine_id==15)url_jump="https://so.csdn.net/so/search/s.do?q="+document.getElementById("search_box").value;
+            else if(engine_id==16)url_jump="https://s.taobao.com/search?q="+document.getElementById("search_box").value;
             else url_jump="https://www.oier.fun/";
             window.open(url_jump,"_blank");
         }
@@ -217,6 +226,21 @@
             engine_id=13;engine_holder_id=5;
             $(".engines").removeClass("reversal");
             $("#bilibili").addClass("reversal");
+        }
+        function luogu(){
+            engine_id=14;engine_holder_id=6;
+            $(".engines").removeClass("reversal");
+            $("#luogu").addClass("reversal");
+        }
+        function csdn(){
+            engine_id=15;engine_holder_id=6;
+            $(".engines").removeClass("reversal");
+            $("#csdn").addClass("reversal");
+        }
+        function taobao(){
+            engine_id=16;engine_holder_id=6;
+            $(".engines").removeClass("reversal");
+            $("#taobao").addClass("reversal");
         }
     </script>
 </body>
