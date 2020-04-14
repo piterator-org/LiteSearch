@@ -159,7 +159,7 @@
             else if(engine_id==18)url_jump="https://search.yhd.com/c0-0/k"+document.getElementById("search_box").value;
             else if(engine_id==19)url_jump="https://list.tmall.com/search_product.htm?q="+document.getElementById("search_box").value;
             else url_jump="https://www.oier.fun/";
-            window.open(url_jump,"_blank");
+            window.open(url_jump.replace(/\+/g,'%2B'),"_blank");
         }
         function engines_fold(){
             has_folded=1-has_folded;
