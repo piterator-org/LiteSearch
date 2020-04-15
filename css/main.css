@@ -1,0 +1,52 @@
+.holders{
+    position: relative;
+    height: 42px;
+    min-width: 360px;
+    width: 40%;
+    margin: auto;
+    text-align: center;
+}
+#search_box{
+    height: 42px;
+    width: 100%;
+    display: block;
+    margin-top: .6em;
+    border-radius: 0.8em;
+    border: 1.5px solid rgb(0,181,173);
+    color: rgb(0,181,173);
+    padding-left: 12px;
+    padding-right: 96px;
+    box-sizing: border-box;
+    font-weight: 100;
+    outline: none;
+}
+#search_btn{
+    height: 42px;
+    width: 88px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    border: 1.5px solid rgb(0,181,173);
+    box-sizing: border-box;
+    font-weight: 100;
+    border-radius: 0px 12px 12px 0px;
+}
+.engines{
+    height: 42px;
+    margin-top: .6em;
+    border: 1.5px solid rgb(0,181,173);
+    box-sizing: border-box;
+    font-weight: 100;
+}
+#engines_fold{
+    height: 42px;
+    margin-top: .6em;
+    width: 360px;
+    border: 1.5px solid rgb(0,181,173);
+    box-sizing: border-box;
+    font-weight: 100;
+}
+.engines_holders{
+    height: 47px;
+}
