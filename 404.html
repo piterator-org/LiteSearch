@@ -295,6 +295,7 @@
             history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
         }
         window.onload = function(){//Zhe duan dai ma you dian gui chu, qing wu shan zi xiu gai!!!
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/");
             function getUrlParam(name) {
                 var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
                 var r = window.location.search.substr(1).match(reg);
