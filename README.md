@@ -4,5 +4,5 @@
 
 # 轻搜索 Lite Search
 **<img src="http://s.oier.in/cn.png" width="16" alt="CN" /> 大陆简体** | [<img src="http://s.oier.in/us.png" width="16" alt="US" /> English](README.en-us.md)
-## 这是什么项目？
-> 一款开源的轻量级搜索，包含了``20``个搜索引擎。
+## 这是他妈是什么？
+> 一款开源的**轻量级**搜索，包含了``20``个搜索引擎。
