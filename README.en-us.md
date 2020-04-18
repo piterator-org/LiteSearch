@@ -3,7 +3,7 @@
 </p>
 
 # Lite Search
-[<img src="http://s.oier.in/cn.png" width="16" alt="CN" /> 大陆简体](README.md) | **<img src="http://s.oier.in/us.png" width="16" alt="US" /> English**
+[<img src="http://s.oier.in/cn.png" width="16" alt="CN" /> 大陆简体](README.md) | **<img src="http://s.oier.in/us.png" width="16" alt="US" /> English** | [<img src="http://s.oier.in/ru.png" width="16" alt="RU" /> Русский](README.ru.md)
 ## What the fuck this is?
 > An open-source **Lite** Search, included ``20`` search engines.
 ## Where is the fucking demo?
