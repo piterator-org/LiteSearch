@@ -3,7 +3,7 @@
 </p>
 
 # Лёгкий Поиск
-[<img src="http://s.oier.in/cn.png" width="16" alt="CN" /> 大陆简体](README.zh-Hans-CN.md) | **<img src="http://s.oier.in/ru.png" width="16" alt="RU" /> Русский** | [<img src="http://s.oier.in/us.png" width="16" alt="US" /> English](README.en-us.md)
+[<img src="http://s.oier.in/cn.png" width="16" alt="CN" /> 大陆简体](README.zh-Hans-CN.md) | [<img src="http://s.oier.in/us.png" width="16" alt="US" /> English](README.en-us.md) | **<img src="http://s.oier.in/ru.png" width="16" alt="RU" /> Русский**
 ## Что это такое?
 > Легкий **поиск с открытым** исходным кодом содержит ``20`` поисковых систем.
 ## Где, черт возьми, демократия?
