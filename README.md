@@ -8,3 +8,5 @@
 > 一款开源的**轻量级**搜索，包含了``20``个搜索引擎。
 ## Demo 他妈的在哪里？
 > [在这里](https://litesearch.cn/)，不用感谢我。
+## 赏我一杯奶茶吧QωQ
+<img src="http://s.oier.in/wechat_pay.png" width="320" alt="wechat_pay" />
