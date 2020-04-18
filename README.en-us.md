@@ -3,6 +3,6 @@
 </p>
 
 # Lite Search
-**<img src="http://s.oier.in/cn.png" width="16" alt="CN" /> 大陆简体** | [<img src="http://s.oier.in/us.png" width="16" alt="US" /> English](README.en-us.md)
+[<img src="http://s.oier.in/cn.png" width="16" alt="CN" /> 大陆简体](README.md) | **<img src="http://s.oier.in/us.png" width="16" alt="US" /> English**
 ## What the fuck this is?
 > An open-source **Lite** Search，included``20``search engines。
