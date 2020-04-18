@@ -8,3 +8,5 @@
 > An open-source **Lite** Search, included``20``search engines.
 ## Where is the fucking demo?
 > [Here it is](https://litesearch.cn/), and no fucking thanks.
+## Buy me a cup of coffee
+<img src="http://s.oier.in/alipay.png" height="320" alt="alipay" /><img src="http://s.oier.in/wechat_trans.png" height="320" alt="wechat_pay" /><img src="http://s.oier.in/wechat_pay.png" height="320" alt="wechat_pay" />
