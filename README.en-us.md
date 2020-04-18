@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/piterator-org"><img src="https://static.piterator.com/logo.min.svg" alt="Piterator" width="20%"></a>
+  <a href="https://github.com/piterator-org"><img src="https://static.piterator.com/logo.min.svg" alt="Piterator" width="16%"></a>
 </p>
 
 # Lite Search
