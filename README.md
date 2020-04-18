@@ -3,6 +3,6 @@
 </p>
 
 # 轻搜索 Lite Search
-🎌 **![CN](http://s.oier.in/cn.png) 大陆简体** | [![US](http://s.oier.in/us.png) English](README.en-us.md)
+🎌 **<img src="http://s.oier.in/cn.png" width="1em" alt="CN" /> 大陆简体** | [<img src="http://s.oier.in/us.png" width="1em" alt="US" /> English](README.en-us.md)
 ## 这是什么项目？
 > 一款开源的轻量级搜索，包含了``20``个搜索引擎。
