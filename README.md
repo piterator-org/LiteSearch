@@ -9,4 +9,4 @@
 ## Demo 他妈的在哪里？
 > [在这里](https://litesearch.cn/)，不用感谢我。
 ## 赏我一杯奶茶吧QωQ
-<img src="http://s.oier.in/wechat_pay.png" height="320" alt="wechat_pay" /><img src="http://s.oier.in/alipay.png" height="320" alt="alipay" />
+<img src="http://s.oier.in/alipay.png" height="320" alt="alipay" /><img src="http://s.oier.in/wechat_trans.png" height="320" alt="wechat_pay" /><img src="http://s.oier.in/wechat_pay.png" height="320" alt="wechat_pay" />
