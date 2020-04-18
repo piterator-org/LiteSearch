@@ -7,4 +7,4 @@
 ## What the fuck this is?
 > An open-source **Lite** Search, included``20``search engines.
 ## Where is the fucking demo?
-> [Here it is](https://litesearch.cn/), and don't fucking thanks.
+> [Here it is](https://litesearch.cn/), and no fucking thanks.
