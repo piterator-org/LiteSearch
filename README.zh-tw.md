@@ -3,7 +3,7 @@
 </p>
 
 # 輕蒐索
-[<img src="http://s.oier.in/cn.png" width="16" alt="CN" /> 大陆简体](README.md) | **<img src="http://s.oier.in/cn.png" width="16" alt="CN" /> 臺灣正體** | [<img src="http://s.oier.in/us.png" width="16" alt="US" /> English](README.en-us.md) | [<img src="http://s.oier.in/ru.png" width="16" alt="RU" /> Русский](README.ru.md)
+[<img src="http://s.oier.in/cn.png" width="16" alt="CN" /> 大陆简体](README.md) | **<img src="http://s.oier.in/tw.png" width="16" alt="TW" /> 臺灣正體** | [<img src="http://s.oier.in/us.png" width="16" alt="US" /> English](README.en-us.md) | [<img src="http://s.oier.in/ru.png" width="16" alt="RU" /> Русский](README.ru.md)
 ## 這是他媽是什麼？
 > 一款開源的**羽量級**蒐索，包含了 ``20`` 個搜尋引擎。
 ## Demo 他媽的在哪裡？
