@@ -2,8 +2,8 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="https://ui.piterator.xyz/quligem-ui/css/quligem.css" rel="stylesheet" />
-    <script src="https://static.piterator.com/node_modules/jquery/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link href="css/quligem.css" rel="stylesheet" />
+    <script src="https://static.piterator.com/node_modules/jquery/dist/jquery.min.js"></script>
     <title>Lite Search - 轻搜索</title>
     <style>
         .holders{
@@ -123,18 +123,18 @@
             <br />
             All rights reserved.
             <br />
-            <a href="https://github.com/bohanjun/LiteSearch/" class="link teal" target="_blank">Fork me on GitHub</a>
-            <br />
-            <iframe class="github_btn" src="https://ghbtns.com/github-btn.html?user=bohanjun&repo=LiteSearch&type=star&count=true" frameborder="0" scrolling="0" width="51px" height="20px"></iframe>
-            |
-            <iframe class="github_btn" src="https://ghbtns.com/github-btn.html?user=bohanjun&repo=LiteSearch&type=watch&count=true&v=2" frameborder="0" scrolling="0" width="62px" height="20px"></iframe>
-            |
-            <iframe class="github_btn" src="https://ghbtns.com/github-btn.html?user=bohanjun&repo=LiteSearch&type=fork&count=true" frameborder="0" scrolling="0" width="53px" height="20px"></iframe>
-            <br />
             沪ICP备19004827号-4
+            <br />
+            <a href="sitemap.xml" class="link teal">SiteMap</a>
+            <div style="display: none"><img src="https://www.hit-counts.com/counter.php?t=MTQ0ODA1NA==" alt="hit-counts" /></div>
         </p>
     </div>
     <script>
+        $(function(){
+            if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                window.location.href = "https://m.litesearch.cn/";
+            }
+        });
         /*
         function box_onfocus(){
             $('#search_box').css('border','2px solid rgb(0,181,173)');
@@ -172,7 +172,7 @@
             else if(engine_id==17)url_jump="https://search.jd.com/Search?enc=utf-8&keyword="+document.getElementById("search_box").value+"&wq="+document.getElementById("search_box").value;
             else if(engine_id==18)url_jump="https://search.yhd.com/c0-0/k"+document.getElementById("search_box").value;
             else if(engine_id==19)url_jump="https://list.tmall.com/search_product.htm?q="+document.getElementById("search_box").value;
-            else url_jump="https://www.oier.fun/";
+            else url_jump="https://www.piterator.com/";
             window.open(url_jump.replace(/\+/g,'%2B'),"_blank");
         }
         function engines_fold(){

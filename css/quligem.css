@@ -1,0 +1,409 @@
+::selection{
+    background-color: #cce2ff;
+    color: rgba(0,0,0,.87);
+}
+*{
+    font-family: "Microsoft Yahei", "Consolas", "Inconsolata", "Monaco", "Monofur", "Courier", monospace;
+    font-weight: 400;
+	position: relative;
+}
+.container{
+    width: 72%;
+}
+.lighter{
+    font-weight: 100;
+}
+.bolder{
+    font-weight: 700;
+}
+.header{
+    font-size: 2em;
+}
+.left{
+    text-align: left;
+}
+.center{
+    text-align: center;
+    margin: auto;
+}
+.right{
+    text-align: right;
+}
+.link{
+    color: rgb(33,133,208);
+    text-decoration: underline;
+    cursor: pointer;
+}
+.link:hover{
+    color: rgb(0,93,168)!important;
+    text-decoration: underline;
+}
+.link:visited{
+    color: rgb(33,133,208);
+    text-decoration: underline;
+}
+.red{
+    color: rgb(219,40,40);
+    border-color: rgb(219,40,40);
+}
+.button.reversal.red{
+    background-color: rgb(219,40,40)!important;
+    border-color: rgb(219,40,40);
+    color: rgb(248, 248, 248)!important;
+}
+.link.red:hover,.button.red:hover{
+    color: rgb(179,0,0)!important;
+}
+.button.reversal:hover{
+    background-color: rgb(179,0,0)!important;
+    border-color: rgb(179,0,0);
+    color: rgb(248, 248, 248)!important;
+}
+.link.red{
+    color: rgb(219,40,40);
+}
+.link.red:visited{
+    color: rgb(219,40,40);
+}
+.orange{
+    color: rgb(242,113,28);
+    border-color: rgb(242,113,28);
+}
+.button.reversal.orange{
+    background-color: rgb(242,113,28)!important;
+    border-color: rgb(242,113,28);
+    color: rgb(248, 248, 248)!important;
+}
+.link.orange:hover,.button.orange:hover{
+    color: rgb(202,73,0)!important;
+}
+.button.reversal.orange:hover{
+    background-color: rgb(202,73,0)!important;
+    border-color: rgb(202,73,0);
+    color: rgb(248, 248, 248)!important;
+}
+.link.orange{
+    color: rgb(242,113,28);
+}
+.link.orange:visited{
+    color: rgb(242,113,28);
+}
+.yellow{
+    color: rgb(251,189,8);
+    border-color: rgb(251,189,8);
+}
+.button.reversal.yellow{
+    background-color: rgb(251,189,8)!important;
+    border-color: rgb(251,189,8);
+    color: rgb(248, 248, 248)!important;
+}
+.link.yellow:hover,.button.yellow:hover{
+    color: rgb(211,149,0)!important;
+}
+.button.reversal.yellow:hover{
+    background-color: rgb(211,149,0)!important;
+    border-color: rgb(211,149,0);
+    color: rgb(248, 248, 248)!important;
+}
+.link.yellow:visited{
+    color: rgb(251,189,8);
+}
+.olive{
+    color: rgb(181,204,24);
+    border-color: rgb(181,204,24);
+}
+.button.reversal.olive{
+    background-color: rgb(181,204,24)!important;
+    border-color: rgb(181,204,24);
+    color: rgb(248, 248, 248)!important;
+}
+.link.olive:hover,.button.olive:hover{
+    color: rgb(141,164,0)!important;
+}
+.button.reversal.olive:hover{
+    background-color: rgb(141,164,0)!important;
+    border-color: rgb(141,164,0);
+    color: rgb(248, 248, 248)!important;
+}
+.link.olive{
+    color: rgb(181,204,24);
+}
+.link.olive:visited{
+    color: rgb(181,204,24);
+}
+.green{
+    color: rgb(33,186,69);
+    border-color: rgb(33,186,69);
+}
+.button.reversal.green{
+    background-color: rgb(33,186,69)!important;
+    border-color: rgb(33,186,69);
+    color: rgb(248, 248, 248)!important;
+}
+.link.green:hover,.button.green:hover{
+    color: rgb(0,146,29)!important;
+}
+.button.reversal.green:hover{
+    background-color: rgb(0,146,29)!important;
+    border-color: rgb(0,146,29);
+    color: rgb(248, 248, 248)!important;
+}
+.link.green{
+    color: rgb(33,186,69);
+}
+.link.green:visited{
+    color: rgb(33,186,69);
+}
+.teal{
+    color: rgb(0,181,173);
+    border-color: rgb(0,181,173);
+}
+.button.reversal.teal{
+    background-color: rgb(0,181,173)!important;
+    border-color: rgb(0,181,173);
+    color: rgb(248, 248, 248)!important;
+}
+.link.teal:hover,.button.teal:hover{
+    color: rgb(0,141,133)!important;
+}
+.button.reversal.teal:hover{
+    background-color: rgb(0,141,133)!important;
+    border-color: rgb(0,141,133);
+    color: rgb(248, 248, 248)!important;
+}
+.link.teal{
+    color: rgb(0,181,173);
+}
+.link.teal:visited{
+    color: rgb(0,181,173);
+}
+.blue{
+    color: rgb(33,133,208);
+    border-color: rgb(33,133,208);
+}
+.button.reversal.blue{
+    background-color: rgb(33,133,208)!important;
+    border-color: rgb(33,133,208);
+    color: rgb(248, 248, 248)!important;
+}
+.link.blue:hover,.button.blue:hover{
+    color: rgb(0,93,168)!important;
+}
+.button.reversal.blue:hover{
+    background-color: rgb(0,93,168)!important;
+    border-color: rgb(0,93,168);
+    color: rgb(248, 248, 248)!important;
+}
+.link.blue{
+    color: rgb(33,133,208);
+}
+.link.blue:visited{
+    color: rgb(33,133,208);
+}
+.purple{
+    color: rgb(163,51,200);
+    border-color: rgb(163,51,200);
+}
+.button.reversal.purple{
+    background-color: rgb(163,51,200)!important;
+    border-color: rgb(163,51,200);
+    color: rgb(248, 248, 248)!important;
+}
+.link.purple:hover,.button.purple:hover{
+    color: rgb(123,11,160)!important;
+}
+.button.reversal.purple:hover{
+    background-color: rgb(123,11,160)!important;
+    border-color: rgb(123,11,160);
+    color: rgb(248, 248, 248)!important;
+}
+.link.purple:visited{
+    color: rgb(163,51,200);
+}
+.pink{
+    color: rgb(224,57,151);
+    border-color: rgb(224,57,151);
+}
+.button.reversal.pink{
+    background-color: rgb(224,57,151)!important;
+    border-color: rgb(224,57,151);
+    color: rgb(248, 248, 248)!important;
+}
+.link.pink:hover,.button.pink:hover{
+    color: rgb(184,17,111)!important;
+}
+.button.reversal.pink:hover{
+    background-color: rgb(184,17,111)!important;
+    border-color: rgb(184,17,111);
+    color: rgb(248, 248, 248)!important;
+}
+.link.pink{
+    color: rgb(224,57,151);
+}
+.link.pink:visited{
+    color: rgb(224,57,151);
+}
+.brown{
+    color: rgb(165,103,63);
+    border-color: rgb(165,103,63);
+}
+.button.reversal.brown{
+    background-color: rgb(165,103,63)!important;
+    border-color: rgb(165,103,63);
+    color: rgb(248, 248, 248)!important;
+}
+.link.brown:hover,.button.brown:hover{
+    color: rgb(125,63,23)!important;
+}
+.button.reversal.brown:hover{
+    background-color: rgb(125,63,23)!important;
+    border-color: rgb(125,63,23);
+    color: rgb(248, 248, 248)!important;
+}
+.link.brown{
+    color: rgb(165,103,63);
+}
+.link.brown:visited{
+    color: rgb(165,103,63);
+}
+.grey{
+    color: rgb(118,118,118);
+    border-color: rgb(118,118,118);
+}
+.button.reversal.grey{
+    background-color: rgb(118,118,118)!important;
+    border-color: rgb(118,118,118);
+    color: rgb(248, 248, 248)!important;
+}
+.link.grey:hover,.button.grey:hover{
+    color: rgb(78,78,78)!important;
+}
+.button.reversal.grey:hover{
+    background-color: rgb(78,78,78)!important;
+    border-color: rgb(78,78,78);
+    color: rgb(248, 248, 248)!important;
+}
+.link.grey{
+    color: rgb(118,118,118);
+}
+.link.grey:visited{
+    color: rgb(118,118,118);
+}
+.black{
+    color: rgb(27,28,29);
+    border-color: rgb(27,28,29);
+}
+.button.reversal.black{
+    background-color: rgb(27,28,29)!important;
+    border-color: rgb(27,28,29);
+    color: rgb(248, 248, 248)!important;
+}
+.link.black:hover,.button.black:hover{
+    color: rgb(64,65,66)!important;
+}
+.button.reversal.black:hover{
+    background-color: rgb(49,51,52)!important;
+    border-color: rgb(49,51,52);
+    color: rgb(248, 248, 248)!important;
+}
+.link.black{
+    color: rgb(27,28,29);
+}
+.link.black:visited{
+    color: rgb(27,28,29);
+}
+.button{
+    display: inline-flex;
+    border-radius: .3em;
+    border: 2px solid;
+    min-width: 5.2em;
+    padding-left: .6em;
+    padding-right: .6em;
+    height: 1.8em;
+    margin-bottom: .4em;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    font-weight: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+.divider{
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: rgb(158,158,158);
+    box-sizing: border-box;
+}
+.divider.vertical{
+    display: inline-block;
+    height: auto!important;
+    width: 1px!important;
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: rgb(158,158,158);
+    box-sizing: border-box;
+}
+.footer{
+    width: 100%;
+    background-color: #373737;
+    color: #E7E7E7;
+    margin: auto;
+    margin-top: .8em;
+    padding-top: .78em;
+    padding-bottom: .78em;
+    min-height: 3em;
+    padding-left: 25%;
+    padding-right: 25%;
+    box-sizing: border-box;
+}
+.footer.floating{
+    position: fixed;
+    bottom: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #373737;
+    margin: auto;
+    height: 3em;
+    padding-left: 18%;
+    padding-right: 18%;
+    z-index: 9999;
+    box-sizing: border-box;
+}
+.nav>.item{
+    margin-top: .65em;
+    font-size: 1.13em;
+    color: #D7D7D7;
+    height: 100%;
+    display: inline-flex;
+    height: 100%;
+    cursor: pointer;
+    margin-left: .4em;
+    margin-right: .4em;
+    text-decoration: none;
+}
+.nav>.item:hover{
+    color: #FFFFFF;
+}
+.nav>.item.selected{
+    color: #FFFFFF;
+    cursor: default;
+}
+.nav>.item.disable{
+    color: #999999;
+    cursor: not-allowed;
+}
+.nav>.item.disable:hover{
+    color: #999999;
+}
+.nav-holder{
+    height: 3.6em;
+}
