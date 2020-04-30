@@ -2,202 +2,203 @@
 <html>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="css/quligem.css" rel="stylesheet" />
-    <script src="https://static.piterator.com/node_modules/jquery/dist/jquery.min.js"></script>
-    <title>Lite Search - 轻搜索</title>
-    <style>
-        .holders {
-            position: relative;
-            height: 42px;
-            min-width: 360px;
-            width: 40%;
-            margin: auto;
-            text-align: center;
-        }
+  <meta charset="utf-8" />
+  <link href="css/quligem.css" rel="stylesheet" />
+  <script src="https://static.piterator.com/node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>Lite Search - 轻搜索</title>
+  <style>
+    .holders {
+      position: relative;
+      height: 42px;
+      min-width: 360px;
+      width: 40%;
+      margin: auto;
+      text-align: center;
+    }
 
-        #search_box {
-            height: 42px;
-            width: 100%;
-            display: block;
-            margin-top: .6em;
-            border-radius: 0.8em;
-            border: 1.5px solid rgb(0, 181, 173);
-            color: rgb(0, 181, 173);
-            padding-left: 12px;
-            padding-right: 96px;
-            box-sizing: border-box;
-            font-weight: 100;
-            outline: none;
-        }
+    #search_box {
+      height: 42px;
+      width: 100%;
+      display: block;
+      margin-top: .6em;
+      border-radius: 0.8em;
+      border: 1.5px solid rgb(0, 181, 173);
+      color: rgb(0, 181, 173);
+      padding-left: 12px;
+      padding-right: 96px;
+      box-sizing: border-box;
+      font-weight: 100;
+      outline: none;
+    }
 
-        #search_btn {
-            height: 42px;
-            width: 88px;
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            bottom: 0px;
-            border: 1.5px solid rgb(0, 181, 173);
-            box-sizing: border-box;
-            font-weight: 100;
-            border-radius: 0px 12px 12px 0px;
-        }
+    #search_btn {
+      height: 42px;
+      width: 88px;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      border: 1.5px solid rgb(0, 181, 173);
+      box-sizing: border-box;
+      font-weight: 100;
+      border-radius: 0px 12px 12px 0px;
+    }
 
-        .engines {
-            height: 42px;
-            margin-top: .6em;
-            border: 1.5px solid rgb(0, 181, 173);
-            box-sizing: border-box;
-            font-weight: 100;
-        }
+    .engines {
+      height: 42px;
+      margin-top: .6em;
+      border: 1.5px solid rgb(0, 181, 173);
+      box-sizing: border-box;
+      font-weight: 100;
+    }
 
-        #engines_fold {
-            height: 42px;
-            margin-top: .6em;
-            width: 360px;
-            border: 1.5px solid rgb(0, 181, 173);
-            box-sizing: border-box;
-            font-weight: 100;
-        }
+    #engines_fold {
+      height: 42px;
+      margin-top: .6em;
+      width: 360px;
+      border: 1.5px solid rgb(0, 181, 173);
+      box-sizing: border-box;
+      font-weight: 100;
+    }
 
-        .engines_holders {
-            height: 47px;
-        }
-    </style>
+    .engines_holders {
+      height: 47px;
+    }
+  </style>
 </head>
 
 <body onkeypress="if(event.keyCode==13)start()" style="position: relative">
-    <div style="height: 88px; box-sizing: border-box;"></div>
-    <h1 class="header teal center">轻搜索 Lite Search</h1>
-    <div class="holders">
-        <input id="search_box" name="search_box" placeholder="搜索无需繁琐" />
-        <span class="button teal reversal" id="search_btn" onclick="start()">开始</span>
-    </div>
-    <div class="holders engines_holders" id="enghld_1">
-        <div style="height: 5px; box-sizing: border-box;"></div>
-        <span class="button teal reversal engines" id="baidu" name="0">百度</span>
-        <span class="button teal engines" id="bing" name="1">必应国内版</span>
-        <span class="button teal engines" id="bing_gob" name="2">必应国际版</span>
-    </div>
-    <div class="holders engines_holders" id="enghld_2">
-        <div style="height: 5px; box-sizing: border-box;"></div>
-        <span class="button teal engines" id="_360" name="3">360搜索</span>
-        <span class="button teal engines" id="sogou" name="4">搜狗搜索</span>
-        <span class="button teal engines" id="github" name="5">GitHub</span>
-    </div>
-    <div class="holders engines_holders" id="enghld_3">
-        <div style="height: 5px; box-sizing: border-box;"></div>
-        <span class="button teal engines" id="gitee" name="6">码云 Gitee</span>
-        <span class="button teal engines" id="oschina" name="7">OSCHINA</span>
-        <span class="button teal engines" id="youdao" name="8">有道词典</span>
-    </div>
-    <div class="holders engines_holders" id="enghld_4">
-        <div style="height: 5px; box-sizing: border-box;"></div>
-        <span class="button teal engines" id="moegirl" name="9">萌娘百科</span>
-        <span class="button teal engines" id="dnspod" name="10">DNSPod 域名注册</span>
-    </div>
-    <div class="holders engines_holders" id="enghld_5">
-        <div style="height: 5px; box-sizing: border-box;"></div>
-        <span class="button teal engines" id="wanwang" name="11">万网域名注册</span>
-        <span class="button teal engines" id="zhihu" name="12">知乎</span>
-        <span class="button teal engines" id="bilibili" name="13">哔哩哔哩</span>
-    </div>
-    <div class="holders engines_holders" id="enghld_6">
-        <div style="height: 5px; box-sizing: border-box;"></div>
-        <span class="button teal engines" id="luogu" name="14">洛谷</span>
-        <span class="button teal engines" id="csdn" name="15">CSDN</span>
-        <span class="button teal engines" id="taobao" name="16">淘宝网</span>
-    </div>
-    <div class="holders engines_holders" id="enghld_7">
-        <div style="height: 5px; box-sizing: border-box;"></div>
-        <span class="button teal engines" id="jd" name="17">京东</span>
-        <span class="button teal engines" id="yhd" name="18">1号店</span>
-        <span class="button teal engines" id="tmall" name="19">天猫</span>
-    </div>
-    <div class="holders">
-        <div style="height: 5px; box-sizing: border-box;"></div>
-        <span class="button teal reversal" id="engines_fold" onclick="engines_fold()">折叠</span>
-    </div>
-    <div class="teal">
-        <div style="height: 10px; box-sizing: border-box;"></div>
-        <p style="text-align: center">
-            Copyright &copy; <a href="https://www.piterator.com/" class="link teal" target="_blank">Piterator</a> 2017 -
-            2020.
-            <br />
-            All rights reserved.
-            <br />
-            沪ICP备19004827号-4
-            <br />
-            <a href="sitemap.xml" class="link teal">SiteMap</a>
-            <div style="display: none"><img src="https://www.hit-counts.com/counter.php?t=MTQ0ODA1NA=="
-                    alt="hit-counts" /></div>
-        </p>
-    </div>
-    <script>
-        // $(function () {
-        //     if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-        //         window.location.href = "https://m.litesearch.cn/";
-        //     }
-        // });
-        /*
-        function box_onfocus(){
-            $('#search_box').css('border','2px solid rgb(0,181,173)');
-            $('#search_btn').css('border','2px solid rgb(0,181,173)');
-            $('#search_box').css('border-radius','42px');
-            $('#search_btn').css('border-radius',' 0px 42px 42px 0px');
-        }
-        function box_onblur(){
-            $('#search_box').css('border','1.5px solid rgb(0,181,173)');
-            $('#search_tnx').css('border','1.5px solid rgb(0,181,173)');
-            $('#search_box').css('border-radius','12px');
-            $('#search_btn').css('border-radius',' 0px 12px 12px 0px');
-        }
-        */
-        var engine_holder_id = 1, folded = false;
-        function start() {
-            window.open([
-                `https://www.baidu.com/s?ie=UTF-8&wd=${$("#search_box").val()}`,
-                `https://cn.bing.com/search?ensearch=0&q=${$("#search_box").val()}`,
-                `https://cn.bing.com/search?ensearch=1&q=${$("#search_box").val()}`,
-                `https://www.so.com/s?q=${$("#search_box").val()}`,
-                `https://www.sogou.com/web?query=${$("#search_box").val()}`,
-                `https://github.com/search?q=${$("#search_box").val()}`,
-                `https://search.gitee.com/?q=${$("#search_box").val()}`,
-                `https://www.oschina.net/search?scope=all&q=${$("#search_box").val()}`,
-                `https://www.youdao.com/w/${$("#search_box").val()}`,
-                `https://zh.moegirl.org/index.php?search=${$("#search_box").val()}`,
-                `https://buy.cloud.tencent.com/domain?domain=${$("#search_box").val()}`,
-                `https://wanwang.aliyun.com/domain/searchresult/#/?keyword=${$("#search_box").val()}`,
-                `https://www.zhihu.com/search?type=content&q=${$("#search_box").val()}`,
-                `https://search.bilibili.com/all?keyword=${$("#search_box").val()}`,
-                `https://www.luogu.com.cn/problem/list?keyword=${$("#search_box").val()}`,
-                `https://so.csdn.net/so/search/s.do?q=${$("#search_box").val()}`,
-                `https://s.taobao.com/search?q=${$("#search_box").val()}`,
-                `https://search.jd.com/Search?enc=utf-8&keyword=${$("#search_box").val()}`,
-                `https://search.yhd.com/c0-0/k${$("#search_box").val()}`,
-                `https://list.tmall.com/search_product.htm?q=${$("#search_box").val()}`
-            ][parseInt($('.engines.reversal').attr('name'))].replace(/\+/g, '%2B'), "_blank");
-        }
-        function engines_fold() {
-            folded = !folded;
-            if (folded) {
-                $("#engines_fold").html("展开");
-                $("#engines_fold").removeClass("reversal");
-                $(".engines_holders").css("display", "none");
-                $("#enghld_" + [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7][parseInt($('.engines.reversal').attr('name'))]).css("display", "block");
-            } else {
-                $("#engines_fold").html("折叠");
-                $("#engines_fold").addClass("reversal");
-                $(".engines_holders").css("display", "block");
-            }
-        }
-        $('.engines').click(function () {
-            $(".engines").removeClass("reversal");
-            $(this).addClass("reversal");
-        })
-        
-    </script>
+  <div style="height: 88px; box-sizing: border-box;"></div>
+  <h1 class="header teal center">轻搜索 Lite Search</h1>
+  <div class="holders">
+    <input id="search_box" name="search_box" placeholder="搜索无需繁琐" />
+    <span class="button teal reversal" id="search_btn" onclick="start()">开始</span>
+  </div>
+  <div class="holders engines_holders" id="enghld_1">
+    <div style="height: 5px; box-sizing: border-box;"></div>
+    <span class="button teal reversal engines" id="baidu" name="0">百度</span>
+    <span class="button teal engines" id="bing" name="1">必应国内版</span>
+    <span class="button teal engines" id="bing_gob" name="2">必应国际版</span>
+  </div>
+  <div class="holders engines_holders" id="enghld_2">
+    <div style="height: 5px; box-sizing: border-box;"></div>
+    <span class="button teal engines" id="_360" name="3">360搜索</span>
+    <span class="button teal engines" id="sogou" name="4">搜狗搜索</span>
+    <span class="button teal engines" id="github" name="5">GitHub</span>
+  </div>
+  <div class="holders engines_holders" id="enghld_3">
+    <div style="height: 5px; box-sizing: border-box;"></div>
+    <span class="button teal engines" id="gitee" name="6">码云 Gitee</span>
+    <span class="button teal engines" id="oschina" name="7">OSCHINA</span>
+    <span class="button teal engines" id="youdao" name="8">有道词典</span>
+  </div>
+  <div class="holders engines_holders" id="enghld_4">
+    <div style="height: 5px; box-sizing: border-box;"></div>
+    <span class="button teal engines" id="moegirl" name="9">萌娘百科</span>
+    <span class="button teal engines" id="dnspod" name="10">DNSPod 域名注册</span>
+  </div>
+  <div class="holders engines_holders" id="enghld_5">
+    <div style="height: 5px; box-sizing: border-box;"></div>
+    <span class="button teal engines" id="wanwang" name="11">万网域名注册</span>
+    <span class="button teal engines" id="zhihu" name="12">知乎</span>
+    <span class="button teal engines" id="bilibili" name="13">哔哩哔哩</span>
+  </div>
+  <div class="holders engines_holders" id="enghld_6">
+    <div style="height: 5px; box-sizing: border-box;"></div>
+    <span class="button teal engines" id="luogu" name="14">洛谷</span>
+    <span class="button teal engines" id="csdn" name="15">CSDN</span>
+    <span class="button teal engines" id="taobao" name="16">淘宝网</span>
+  </div>
+  <div class="holders engines_holders" id="enghld_7">
+    <div style="height: 5px; box-sizing: border-box;"></div>
+    <span class="button teal engines" id="jd" name="17">京东</span>
+    <span class="button teal engines" id="yhd" name="18">1号店</span>
+    <span class="button teal engines" id="tmall" name="19">天猫</span>
+  </div>
+  <div class="holders">
+    <div style="height: 5px; box-sizing: border-box;"></div>
+    <span class="button teal reversal" id="engines_fold" onclick="engines_fold()">折叠</span>
+  </div>
+  <div class="teal">
+    <div style="height: 10px; box-sizing: border-box;"></div>
+    <p style="text-align: center">
+      Copyright &copy; <a href="https://www.piterator.com/" class="link teal" target="_blank">Piterator</a> 2017 -
+      2020.
+      <br />
+      All rights reserved.
+      <br />
+      沪ICP备19004827号-4
+      <br />
+      <a href="sitemap.xml" class="link teal">SiteMap</a>
+      <div style="display: none"><img src="https://www.hit-counts.com/counter.php?t=MTQ0ODA1NA==" alt="hit-counts" />
+      </div>
+    </p>
+  </div>
+  <script>
+    // $(function () {
+    //     if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    //         window.location.href = "https://m.litesearch.cn/";
+    //     }
+    // });
+    /*
+    function box_onfocus(){
+        $('#search_box').css('border','2px solid rgb(0,181,173)');
+        $('#search_btn').css('border','2px solid rgb(0,181,173)');
+        $('#search_box').css('border-radius','42px');
+        $('#search_btn').css('border-radius',' 0px 42px 42px 0px');
+    }
+    function box_onblur(){
+        $('#search_box').css('border','1.5px solid rgb(0,181,173)');
+        $('#search_tnx').css('border','1.5px solid rgb(0,181,173)');
+        $('#search_box').css('border-radius','12px');
+        $('#search_btn').css('border-radius',' 0px 12px 12px 0px');
+    }
+    */
+    var engine_holder_id = 1, folded = false;
+    function start() {
+      window.open([
+        `https://www.baidu.com/s?ie=UTF-8&wd=${$("#search_box").val()}`,
+        `https://cn.bing.com/search?ensearch=0&q=${$("#search_box").val()}`,
+        `https://cn.bing.com/search?ensearch=1&q=${$("#search_box").val()}`,
+        `https://www.so.com/s?q=${$("#search_box").val()}`,
+        `https://www.sogou.com/web?query=${$("#search_box").val()}`,
+        `https://github.com/search?q=${$("#search_box").val()}`,
+        `https://search.gitee.com/?q=${$("#search_box").val()}`,
+        `https://www.oschina.net/search?scope=all&q=${$("#search_box").val()}`,
+        `https://www.youdao.com/w/${$("#search_box").val()}`,
+        `https://zh.moegirl.org/index.php?search=${$("#search_box").val()}`,
+        `https://buy.cloud.tencent.com/domain?domain=${$("#search_box").val()}`,
+        `https://wanwang.aliyun.com/domain/searchresult/#/?keyword=${$("#search_box").val()}`,
+        `https://www.zhihu.com/search?type=content&q=${$("#search_box").val()}`,
+        `https://search.bilibili.com/all?keyword=${$("#search_box").val()}`,
+        `https://www.luogu.com.cn/problem/list?keyword=${$("#search_box").val()}`,
+        `https://so.csdn.net/so/search/s.do?q=${$("#search_box").val()}`,
+        `https://s.taobao.com/search?q=${$("#search_box").val()}`,
+        `https://search.jd.com/Search?enc=utf-8&keyword=${$("#search_box").val()}`,
+        `https://search.yhd.com/c0-0/k${$("#search_box").val()}`,
+        `https://list.tmall.com/search_product.htm?q=${$("#search_box").val()}`
+      ][parseInt($('.engines.reversal').attr('name'))].replace(/\+/g, '%2B'), "_blank");
+    }
+    function engines_fold() {
+      folded = !folded;
+      if (folded) {
+        $("#engines_fold").html("展开");
+        $("#engines_fold").removeClass("reversal");
+        $(".engines_holders").css("display", "none");
+        $("#enghld_" + [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7][parseInt($('.engines.reversal').attr('name'))]).css("display", "block");
+      } else {
+        $("#engines_fold").html("折叠");
+        $("#engines_fold").addClass("reversal");
+        $(".engines_holders").css("display", "block");
+      }
+    }
+    $('.engines').click(function () {
+      $(".engines").removeClass("reversal");
+      $(this).addClass("reversal");
+    })
+
+  </script>
 </body>
 
 </html>
