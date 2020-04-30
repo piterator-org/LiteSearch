@@ -156,28 +156,28 @@
         */
         var engine_holder_id = 1, has_folded = 0;
         function start() {
-            window.open(([
-                "https://www.baidu.com/s?ie=UTF-8&wd=",
-                "https://cn.bing.com/search?ensearch=0&q=",
-                "https://cn.bing.com/search?ensearch=1&q=",
-                "https://www.so.com/s?q=",
-                "https://www.sogou.com/web?query=",
-                "https://github.com/search?q=",
-                "https://search.gitee.com/?q=",
-                "https://www.oschina.net/search?scope=all&q=",
-                "https://www.youdao.com/w/",
-                "https://zh.moegirl.org/index.php?search=",
-                "https://buy.cloud.tencent.com/domain?domain=",
-                "https://wanwang.aliyun.com/domain/searchresult/#/?keyword=",
-                "https://www.zhihu.com/search?type=content&q=",
-                "https://search.bilibili.com/all?keyword=",
-                "https://www.luogu.com.cn/problem/list?keyword=",
-                "https://so.csdn.net/so/search/s.do?q=",
-                "https://s.taobao.com/search?q=",
-                "https://search.jd.com/Search?enc=utf-8&keyword=",
-                "https://search.yhd.com/c0-0/k",
-                "https://list.tmall.com/search_product.htm?q="
-            ][parseInt($('.engines.reversal').attr('name'))] + document.getElementById("search_box").value).replace(/\+/g, '%2B'), "_blank");
+            window.open([
+                `https://www.baidu.com/s?ie=UTF-8&wd=${$("#search_box").val()}`,
+                `https://cn.bing.com/search?ensearch=0&q=${$("#search_box").val()}`,
+                `https://cn.bing.com/search?ensearch=1&q=${$("#search_box").val()}`,
+                `https://www.so.com/s?q=${$("#search_box").val()}`,
+                `https://www.sogou.com/web?query=${$("#search_box").val()}`,
+                `https://github.com/search?q=${$("#search_box").val()}`,
+                `https://search.gitee.com/?q=${$("#search_box").val()}`,
+                `https://www.oschina.net/search?scope=all&q=${$("#search_box").val()}`,
+                `https://www.youdao.com/w/${$("#search_box").val()}`,
+                `https://zh.moegirl.org/index.php?search=${$("#search_box").val()}`,
+                `https://buy.cloud.tencent.com/domain?domain=${$("#search_box").val()}`,
+                `https://wanwang.aliyun.com/domain/searchresult/#/?keyword=${$("#search_box").val()}`,
+                `https://www.zhihu.com/search?type=content&q=${$("#search_box").val()}`,
+                `https://search.bilibili.com/all?keyword=${$("#search_box").val()}`,
+                `https://www.luogu.com.cn/problem/list?keyword=${$("#search_box").val()}`,
+                `https://so.csdn.net/so/search/s.do?q=${$("#search_box").val()}`,
+                `https://s.taobao.com/search?q=${$("#search_box").val()}`,
+                `https://search.jd.com/Search?enc=utf-8&keyword=${$("#search_box").val()}`,
+                `https://search.yhd.com/c0-0/k${$("#search_box").val()}`,
+                `https://list.tmall.com/search_product.htm?q=${$("#search_box").val()}`
+            ][parseInt($('.engines.reversal').attr('name'))].replace(/\+/g, '%2B'), "_blank");
         }
         function engines_fold() {
             has_folded = 1 - has_folded;
