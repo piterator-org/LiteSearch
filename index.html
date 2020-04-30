@@ -1,12 +1,13 @@
 <!doctype html>
 <html>
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="css/quligem.css" rel="stylesheet" />
     <script src="https://static.piterator.com/node_modules/jquery/dist/jquery.min.js"></script>
     <title>Lite Search - 轻搜索</title>
     <style>
-        .holders{
+        .holders {
             position: relative;
             height: 42px;
             min-width: 360px;
@@ -14,56 +15,63 @@
             margin: auto;
             text-align: center;
         }
-        #search_box{
+
+        #search_box {
             height: 42px;
             width: 100%;
             display: block;
             margin-top: .6em;
             border-radius: 0.8em;
-            border: 1.5px solid rgb(0,181,173);
-            color: rgb(0,181,173);
+            border: 1.5px solid rgb(0, 181, 173);
+            color: rgb(0, 181, 173);
             padding-left: 12px;
             padding-right: 96px;
             box-sizing: border-box;
             font-weight: 100;
             outline: none;
         }
-        #search_btn{
+
+        #search_btn {
             height: 42px;
             width: 88px;
             position: absolute;
             top: 0px;
             right: 0px;
             bottom: 0px;
-            border: 1.5px solid rgb(0,181,173);
+            border: 1.5px solid rgb(0, 181, 173);
             box-sizing: border-box;
             font-weight: 100;
             border-radius: 0px 12px 12px 0px;
         }
-        .engines{
+
+        .engines {
             height: 42px;
             margin-top: .6em;
-            border: 1.5px solid rgb(0,181,173);
+            border: 1.5px solid rgb(0, 181, 173);
             box-sizing: border-box;
             font-weight: 100;
         }
-        #engines_fold{
+
+        #engines_fold {
             height: 42px;
             margin-top: .6em;
             width: 360px;
-            border: 1.5px solid rgb(0,181,173);
+            border: 1.5px solid rgb(0, 181, 173);
             box-sizing: border-box;
             font-weight: 100;
         }
-        .engines_holders{
+
+        .engines_holders {
             height: 47px;
         }
-        .github_btn{
+
+        .github_btn {
             position: relative;
             top: 5.5px;
         }
     </style>
 </head>
+
 <body onkeypress="if(event.keyCode==13)start()" style="position: relative">
     <div style="height: 88px; box-sizing: border-box;"></div>
     <h1 class="header teal center">轻搜索 Lite Search</h1>
@@ -119,19 +127,21 @@
     <div class="teal">
         <div style="height: 10px; box-sizing: border-box;"></div>
         <p style="text-align: center">
-            Copyright &copy; <a href="https://www.piterator.com/" class="link teal" target="_blank">Piterator</a> 2017 - 2020. 
+            Copyright &copy; <a href="https://www.piterator.com/" class="link teal" target="_blank">Piterator</a> 2017 -
+            2020.
             <br />
             All rights reserved.
             <br />
             沪ICP备19004827号-4
             <br />
             <a href="sitemap.xml" class="link teal">SiteMap</a>
-            <div style="display: none"><img src="https://www.hit-counts.com/counter.php?t=MTQ0ODA1NA==" alt="hit-counts" /></div>
+            <div style="display: none"><img src="https://www.hit-counts.com/counter.php?t=MTQ0ODA1NA=="
+                    alt="hit-counts" /></div>
         </p>
     </div>
     <script>
-        $(function(){
-            if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+        $(function () {
+            if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
                 window.location.href = "https://m.litesearch.cn/";
             }
         });
@@ -149,176 +159,177 @@
             $('#search_btn').css('border-radius',' 0px 12px 12px 0px');
         }
         */
-        var engine_id=0,engine_holder_id=1,has_folded=0;
-        function start(){
+        var engine_id = 0, engine_holder_id = 1, has_folded = 0;
+        function start() {
             var url_jump;
-            if(engine_id==0)url_jump="https://www.baidu.com/s?ie=UTF-8&wd="+document.getElementById("search_box").value;
-            else if(engine_id==1)url_jump="https://cn.bing.com/search?ensearch=0&q="+document.getElementById("search_box").value;
-            else if(engine_id==2)url_jump="https://cn.bing.com/search?ensearch=1&q="+document.getElementById("search_box").value;
-            else if(engine_id==3)url_jump="https://www.so.com/s?q="+document.getElementById("search_box").value;
-            else if(engine_id==4)url_jump="https://www.sogou.com/web?query="+document.getElementById("search_box").value;
-            else if(engine_id==5)url_jump="https://github.com/search?q="+document.getElementById("search_box").value;
-            else if(engine_id==6)url_jump="https://search.gitee.com/?q="+document.getElementById("search_box").value;
-            else if(engine_id==7)url_jump="https://www.oschina.net/search?scope=all&q="+document.getElementById("search_box").value;
-            else if(engine_id==8)url_jump="https://www.youdao.com/w/"+document.getElementById("search_box").value;
-            else if(engine_id==9)url_jump="https://zh.moegirl.org/index.php?search="+document.getElementById("search_box").value;
-            else if(engine_id==10)url_jump="https://buy.cloud.tencent.com/domain?domain="+document.getElementById("search_box").value;
-            else if(engine_id==11)url_jump="https://wanwang.aliyun.com/domain/searchresult/#/?keyword="+document.getElementById("search_box").value;
-            else if(engine_id==12)url_jump="https://www.zhihu.com/search?type=content&q="+document.getElementById("search_box").value;
-            else if(engine_id==13)url_jump="https://search.bilibili.com/all?keyword="+document.getElementById("search_box").value;
-            else if(engine_id==14)url_jump="https://www.luogu.com.cn/problem/list?keyword="+document.getElementById("search_box").value;
-            else if(engine_id==15)url_jump="https://so.csdn.net/so/search/s.do?q="+document.getElementById("search_box").value;
-            else if(engine_id==16)url_jump="https://s.taobao.com/search?q="+document.getElementById("search_box").value;
-            else if(engine_id==17)url_jump="https://search.jd.com/Search?enc=utf-8&keyword="+document.getElementById("search_box").value+"&wq="+document.getElementById("search_box").value;
-            else if(engine_id==18)url_jump="https://search.yhd.com/c0-0/k"+document.getElementById("search_box").value;
-            else if(engine_id==19)url_jump="https://list.tmall.com/search_product.htm?q="+document.getElementById("search_box").value;
-            else url_jump="https://www.piterator.com/";
-            window.open(url_jump.replace(/\+/g,'%2B'),"_blank");
+            if (engine_id == 0) url_jump = "https://www.baidu.com/s?ie=UTF-8&wd=" + document.getElementById("search_box").value;
+            else if (engine_id == 1) url_jump = "https://cn.bing.com/search?ensearch=0&q=" + document.getElementById("search_box").value;
+            else if (engine_id == 2) url_jump = "https://cn.bing.com/search?ensearch=1&q=" + document.getElementById("search_box").value;
+            else if (engine_id == 3) url_jump = "https://www.so.com/s?q=" + document.getElementById("search_box").value;
+            else if (engine_id == 4) url_jump = "https://www.sogou.com/web?query=" + document.getElementById("search_box").value;
+            else if (engine_id == 5) url_jump = "https://github.com/search?q=" + document.getElementById("search_box").value;
+            else if (engine_id == 6) url_jump = "https://search.gitee.com/?q=" + document.getElementById("search_box").value;
+            else if (engine_id == 7) url_jump = "https://www.oschina.net/search?scope=all&q=" + document.getElementById("search_box").value;
+            else if (engine_id == 8) url_jump = "https://www.youdao.com/w/" + document.getElementById("search_box").value;
+            else if (engine_id == 9) url_jump = "https://zh.moegirl.org/index.php?search=" + document.getElementById("search_box").value;
+            else if (engine_id == 10) url_jump = "https://buy.cloud.tencent.com/domain?domain=" + document.getElementById("search_box").value;
+            else if (engine_id == 11) url_jump = "https://wanwang.aliyun.com/domain/searchresult/#/?keyword=" + document.getElementById("search_box").value;
+            else if (engine_id == 12) url_jump = "https://www.zhihu.com/search?type=content&q=" + document.getElementById("search_box").value;
+            else if (engine_id == 13) url_jump = "https://search.bilibili.com/all?keyword=" + document.getElementById("search_box").value;
+            else if (engine_id == 14) url_jump = "https://www.luogu.com.cn/problem/list?keyword=" + document.getElementById("search_box").value;
+            else if (engine_id == 15) url_jump = "https://so.csdn.net/so/search/s.do?q=" + document.getElementById("search_box").value;
+            else if (engine_id == 16) url_jump = "https://s.taobao.com/search?q=" + document.getElementById("search_box").value;
+            else if (engine_id == 17) url_jump = "https://search.jd.com/Search?enc=utf-8&keyword=" + document.getElementById("search_box").value + "&wq=" + document.getElementById("search_box").value;
+            else if (engine_id == 18) url_jump = "https://search.yhd.com/c0-0/k" + document.getElementById("search_box").value;
+            else if (engine_id == 19) url_jump = "https://list.tmall.com/search_product.htm?q=" + document.getElementById("search_box").value;
+            else url_jump = "https://www.piterator.com/";
+            window.open(url_jump.replace(/\+/g, '%2B'), "_blank");
         }
-        function engines_fold(){
-            has_folded=1-has_folded;
-            if(has_folded){
+        function engines_fold() {
+            has_folded = 1 - has_folded;
+            if (has_folded) {
                 $("#engines_fold").html("展开");
                 $("#engines_fold").removeClass("reversal");
-                $(".engines_holders").css("display","none");
-                $("#enghld_"+engine_holder_id).css("display","block");
-            }else{
+                $(".engines_holders").css("display", "none");
+                $("#enghld_" + engine_holder_id).css("display", "block");
+            } else {
                 $("#engines_fold").html("折叠");
                 $("#engines_fold").addClass("reversal");
-                $(".engines_holders").css("display","block");
+                $(".engines_holders").css("display", "block");
             }
         }
-        function baidu(){
-            engine_id=0;engine_holder_id=1;
+        function baidu() {
+            engine_id = 0; engine_holder_id = 1;
             $(".engines").removeClass("reversal");
             $("#baidu").addClass("reversal");
-            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e=" + engine_id);
         }
-        function bing(){
-            engine_id=1;engine_holder_id=1;
+        function bing() {
+            engine_id = 1; engine_holder_id = 1;
             $(".engines").removeClass("reversal");
             $("#bing").addClass("reversal");
-            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e=" + engine_id);
         }
-        function bing_gob(){
-            engine_id=2;engine_holder_id=1;
+        function bing_gob() {
+            engine_id = 2; engine_holder_id = 1;
             $(".engines").removeClass("reversal");
             $("#bing_gob").addClass("reversal");
-            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e=" + engine_id);
         }
-        function _360(){
-            engine_id=3;engine_holder_id=2;
+        function _360() {
+            engine_id = 3; engine_holder_id = 2;
             $(".engines").removeClass("reversal");
             $("#_360").addClass("reversal");
-            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e=" + engine_id);
         }
-        function sogou(){
-            engine_id=4;engine_holder_id=2;
+        function sogou() {
+            engine_id = 4; engine_holder_id = 2;
             $(".engines").removeClass("reversal");
             $("#sogou").addClass("reversal");
-            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e=" + engine_id);
         }
-        function github(){
-            engine_id=5;engine_holder_id=2;
+        function github() {
+            engine_id = 5; engine_holder_id = 2;
             $(".engines").removeClass("reversal");
             $("#github").addClass("reversal");
-            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e=" + engine_id);
         }
-        function gitee(){
-            engine_id=6;engine_holder_id=3;
+        function gitee() {
+            engine_id = 6; engine_holder_id = 3;
             $(".engines").removeClass("reversal");
             $("#gitee").addClass("reversal");
-            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e=" + engine_id);
         }
-        function oschina(){
-            engine_id=7;engine_holder_id=3;
+        function oschina() {
+            engine_id = 7; engine_holder_id = 3;
             $(".engines").removeClass("reversal");
             $("#oschina").addClass("reversal");
-            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e=" + engine_id);
         }
-        function youdao(){
-            engine_id=8;engine_holder_id=3;
+        function youdao() {
+            engine_id = 8; engine_holder_id = 3;
             $(".engines").removeClass("reversal");
             $("#youdao").addClass("reversal");
-            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e=" + engine_id);
         }
-        function moegirl(){
-            engine_id=9;engine_holder_id=4;
+        function moegirl() {
+            engine_id = 9; engine_holder_id = 4;
             $(".engines").removeClass("reversal");
             $("#moegirl").addClass("reversal");
-            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e=" + engine_id);
         }
-        function dnspod(){
-            engine_id=10;engine_holder_id=4;
+        function dnspod() {
+            engine_id = 10; engine_holder_id = 4;
             $(".engines").removeClass("reversal");
             $("#dnspod").addClass("reversal");
-            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e=" + engine_id);
         }
-        function wanwang(){
-            engine_id=11;engine_holder_id=5;
+        function wanwang() {
+            engine_id = 11; engine_holder_id = 5;
             $(".engines").removeClass("reversal");
             $("#wanwang").addClass("reversal");
-            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e=" + engine_id);
         }
-        function zhihu(){
-            engine_id=12;engine_holder_id=5;
+        function zhihu() {
+            engine_id = 12; engine_holder_id = 5;
             $(".engines").removeClass("reversal");
             $("#zhihu").addClass("reversal");
-            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e=" + engine_id);
         }
-        function bilibili(){
-            engine_id=13;engine_holder_id=5;
+        function bilibili() {
+            engine_id = 13; engine_holder_id = 5;
             $(".engines").removeClass("reversal");
             $("#bilibili").addClass("reversal");
-            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e=" + engine_id);
         }
-        function luogu(){
-            engine_id=14;engine_holder_id=6;
+        function luogu() {
+            engine_id = 14; engine_holder_id = 6;
             $(".engines").removeClass("reversal");
             $("#luogu").addClass("reversal");
-            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e=" + engine_id);
         }
-        function csdn(){
-            engine_id=15;engine_holder_id=6;
+        function csdn() {
+            engine_id = 15; engine_holder_id = 6;
             $(".engines").removeClass("reversal");
             $("#csdn").addClass("reversal");
-            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e=" + engine_id);
         }
-        function taobao(){
-            engine_id=16;engine_holder_id=6;
+        function taobao() {
+            engine_id = 16; engine_holder_id = 6;
             $(".engines").removeClass("reversal");
             $("#taobao").addClass("reversal");
-            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e=" + engine_id);
         }
-        function jd(){
-            engine_id=17;engine_holder_id=7;
+        function jd() {
+            engine_id = 17; engine_holder_id = 7;
             $(".engines").removeClass("reversal");
             $("#jd").addClass("reversal");
-            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e=" + engine_id);
         }
-        function yhd(){
-            engine_id=18;engine_holder_id=7;
+        function yhd() {
+            engine_id = 18; engine_holder_id = 7;
             $(".engines").removeClass("reversal");
             $("#yhd").addClass("reversal");
-            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e=" + engine_id);
         }
-        function tmall(){
-            engine_id=19;engine_holder_id=7;
+        function tmall() {
+            engine_id = 19; engine_holder_id = 7;
             $(".engines").removeClass("reversal");
             $("#tmall").addClass("reversal");
-            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e=" + engine_id);
         }
-        window.onload = function(){//Zhe duan dai ma you dian gui chu, qing wu shan zi xiu gai!!!
+        window.onload = function () {//Zhe duan dai ma you dian gui chu, qing wu shan zi xiu gai!!!
             function getUrlParam(name) {
                 var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
                 var r = window.location.search.substr(1).match(reg);
                 if (r != null) return unescape(r[2]);
                 return null;
             }
-            var reg=/^\s*$/,url_e=getUrlParam("e");
+            var reg = /^\s*$/, url_e = getUrlParam("e");
             [baidu, bing, bing_gob, _360, sogou, github, gitee, oschina, youdao, moegirl, dnspod, wanwang, zhihu, bilibili, luogu, csdn, taobao, jd, yhd, tmall][url_e]();
             engines_fold();
         }
     </script>
 </body>
+
 </html>
