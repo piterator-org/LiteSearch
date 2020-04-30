@@ -154,7 +154,7 @@
             $('#search_btn').css('border-radius',' 0px 12px 12px 0px');
         }
         */
-        var engine_holder_id = 1, has_folded = 0;
+        var engine_holder_id = 1, folded = false;
         function start() {
             window.open([
                 `https://www.baidu.com/s?ie=UTF-8&wd=${$("#search_box").val()}`,
@@ -180,8 +180,8 @@
             ][parseInt($('.engines.reversal').attr('name'))].replace(/\+/g, '%2B'), "_blank");
         }
         function engines_fold() {
-            has_folded = 1 - has_folded;
-            if (has_folded) {
+            folded = !folded;
+            if (folded) {
                 $("#engines_fold").html("展开");
                 $("#engines_fold").removeClass("reversal");
                 $(".engines_holders").css("display", "none");
