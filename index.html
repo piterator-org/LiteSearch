@@ -326,8 +326,10 @@
                 return null;
             }
             var reg = /^\s*$/, url_e = getUrlParam("e");
-            [baidu, bing, bing_gob, _360, sogou, github, gitee, oschina, youdao, moegirl, dnspod, wanwang, zhihu, bilibili, luogu, csdn, taobao, jd, yhd, tmall][url_e]();
-            engines_fold();
+            if (url_e) {
+                [baidu, bing, bing_gob, _360, sogou, github, gitee, oschina, youdao, moegirl, dnspod, wanwang, zhihu, bilibili, luogu, csdn, taobao, jd, yhd, tmall][url_e]();
+                engines_fold();
+            }
         }
     </script>
 </body>
