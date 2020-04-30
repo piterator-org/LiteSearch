@@ -76,44 +76,44 @@
     </div>
     <div class="holders engines_holders" id="enghld_1">
         <div style="height: 5px; box-sizing: border-box;"></div>
-        <span class="button teal reversal engines" id="baidu" onclick="engine_id = 0;">百度</span>
-        <span class="button teal engines" id="bing" onclick="engine_id = 1;">必应国内版</span>
-        <span class="button teal engines" id="bing_gob" onclick="engine_id = 2;">必应国际版</span>
+        <span class="button teal reversal engines" id="baidu" name="0">百度</span>
+        <span class="button teal engines" id="bing" name="1">必应国内版</span>
+        <span class="button teal engines" id="bing_gob" name="2">必应国际版</span>
     </div>
     <div class="holders engines_holders" id="enghld_2">
         <div style="height: 5px; box-sizing: border-box;"></div>
-        <span class="button teal engines" id="_360" onclick="engine_id = 3;">360搜索</span>
-        <span class="button teal engines" id="sogou" onclick="engine_id = 4;">搜狗搜索</span>
-        <span class="button teal engines" id="github" onclick="engine_id = 5;">GitHub</span>
+        <span class="button teal engines" id="_360" name="3">360搜索</span>
+        <span class="button teal engines" id="sogou" name="4">搜狗搜索</span>
+        <span class="button teal engines" id="github" name="5">GitHub</span>
     </div>
     <div class="holders engines_holders" id="enghld_3">
         <div style="height: 5px; box-sizing: border-box;"></div>
-        <span class="button teal engines" id="gitee" onclick="engine_id = 6;">码云 Gitee</span>
-        <span class="button teal engines" id="oschina" onclick="engine_id = 7;">OSCHINA</span>
-        <span class="button teal engines" id="youdao" onclick="engine_id = 8;">有道词典</span>
+        <span class="button teal engines" id="gitee" name="6">码云 Gitee</span>
+        <span class="button teal engines" id="oschina" name="7">OSCHINA</span>
+        <span class="button teal engines" id="youdao" name="8">有道词典</span>
     </div>
     <div class="holders engines_holders" id="enghld_4">
         <div style="height: 5px; box-sizing: border-box;"></div>
-        <span class="button teal engines" id="moegirl" onclick="engine_id = 9;">萌娘百科</span>
-        <span class="button teal engines" id="dnspod" onclick="engine_id = 10;">DNSPod 域名注册</span>
+        <span class="button teal engines" id="moegirl" name="9">萌娘百科</span>
+        <span class="button teal engines" id="dnspod" name="10">DNSPod 域名注册</span>
     </div>
     <div class="holders engines_holders" id="enghld_5">
         <div style="height: 5px; box-sizing: border-box;"></div>
-        <span class="button teal engines" id="wanwang" onclick="engine_id = 11;">万网域名注册</span>
-        <span class="button teal engines" id="zhihu" onclick="engine_id = 12;">知乎</span>
-        <span class="button teal engines" id="bilibili" onclick="engine_id = 13;">哔哩哔哩</span>
+        <span class="button teal engines" id="wanwang" name="11">万网域名注册</span>
+        <span class="button teal engines" id="zhihu" name="12">知乎</span>
+        <span class="button teal engines" id="bilibili" name="13">哔哩哔哩</span>
     </div>
     <div class="holders engines_holders" id="enghld_6">
         <div style="height: 5px; box-sizing: border-box;"></div>
-        <span class="button teal engines" id="luogu" onclick="engine_id = 14;">洛谷</span>
-        <span class="button teal engines" id="csdn" onclick="engine_id = 15;">CSDN</span>
-        <span class="button teal engines" id="taobao" onclick="engine_id = 16;">淘宝网</span>
+        <span class="button teal engines" id="luogu" name="14">洛谷</span>
+        <span class="button teal engines" id="csdn" name="15">CSDN</span>
+        <span class="button teal engines" id="taobao" name="16">淘宝网</span>
     </div>
     <div class="holders engines_holders" id="enghld_7">
         <div style="height: 5px; box-sizing: border-box;"></div>
-        <span class="button teal engines" id="jd" onclick="engine_id = 17;">京东</span>
-        <span class="button teal engines" id="yhd" onclick="engine_id = 18;">1号店</span>
-        <span class="button teal engines" id="tmall" onclick="engine_id = 19;">天猫</span>
+        <span class="button teal engines" id="jd" name="17">京东</span>
+        <span class="button teal engines" id="yhd" name="18">1号店</span>
+        <span class="button teal engines" id="tmall" name="19">天猫</span>
     </div>
     <div class="holders">
         <div style="height: 5px; box-sizing: border-box;"></div>
@@ -154,9 +154,9 @@
             $('#search_btn').css('border-radius',' 0px 12px 12px 0px');
         }
         */
-        var engine_id = 0, engine_holder_id = 1, has_folded = 0;
+        var engine_holder_id = 1, has_folded = 0;
         function start() {
-            var url_jump = [
+            window.open(([
                 "https://www.baidu.com/s?ie=UTF-8&wd=",
                 "https://cn.bing.com/search?ensearch=0&q=",
                 "https://cn.bing.com/search?ensearch=1&q=",
@@ -177,8 +177,7 @@
                 "https://search.jd.com/Search?enc=utf-8&keyword=",
                 "https://search.yhd.com/c0-0/k",
                 "https://list.tmall.com/search_product.htm?q="
-            ][engine_id] + document.getElementById("search_box").value;
-            window.open(url_jump.replace(/\+/g, '%2B'), "_blank");
+            ][parseInt($('.engines.reversal').attr('name'))] + document.getElementById("search_box").value).replace(/\+/g, '%2B'), "_blank");
         }
         function engines_fold() {
             has_folded = 1 - has_folded;
@@ -186,7 +185,7 @@
                 $("#engines_fold").html("展开");
                 $("#engines_fold").removeClass("reversal");
                 $(".engines_holders").css("display", "none");
-                $("#enghld_" + [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7][engine_id]).css("display", "block");
+                $("#enghld_" + [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7][parseInt($('.engines.reversal').attr('name'))]).css("display", "block");
             } else {
                 $("#engines_fold").html("折叠");
                 $("#engines_fold").addClass("reversal");
