@@ -76,44 +76,44 @@
     </div>
     <div class="holders engines_holders" id="enghld_1">
         <div style="height: 5px; box-sizing: border-box;"></div>
-        <span class="button teal reversal engines" id="baidu" onclick="baidu()">百度</span>
-        <span class="button teal engines" id="bing" onclick="bing()">必应国内版</span>
-        <span class="button teal engines" id="bing_gob" onclick="bing_gob()">必应国际版</span>
+        <span class="button teal reversal engines" id="baidu" onclick="engine_id = 0;">百度</span>
+        <span class="button teal engines" id="bing" onclick="engine_id = 1;">必应国内版</span>
+        <span class="button teal engines" id="bing_gob" onclick="engine_id = 2;">必应国际版</span>
     </div>
     <div class="holders engines_holders" id="enghld_2">
         <div style="height: 5px; box-sizing: border-box;"></div>
-        <span class="button teal engines" id="_360" onclick="_360()">360搜索</span>
-        <span class="button teal engines" id="sogou" onclick="sogou()">搜狗搜索</span>
-        <span class="button teal engines" id="github" onclick="github()">GitHub</span>
+        <span class="button teal engines" id="_360" onclick="engine_id = 3;">360搜索</span>
+        <span class="button teal engines" id="sogou" onclick="engine_id = 4;">搜狗搜索</span>
+        <span class="button teal engines" id="github" onclick="engine_id = 5;">GitHub</span>
     </div>
     <div class="holders engines_holders" id="enghld_3">
         <div style="height: 5px; box-sizing: border-box;"></div>
-        <span class="button teal engines" id="gitee" onclick="gitee()">码云 Gitee</span>
-        <span class="button teal engines" id="oschina" onclick="oschina()">OSCHINA</span>
-        <span class="button teal engines" id="youdao" onclick="youdao()">有道词典</span>
+        <span class="button teal engines" id="gitee" onclick="engine_id = 6;">码云 Gitee</span>
+        <span class="button teal engines" id="oschina" onclick="engine_id = 7;">OSCHINA</span>
+        <span class="button teal engines" id="youdao" onclick="engine_id = 8;">有道词典</span>
     </div>
     <div class="holders engines_holders" id="enghld_4">
         <div style="height: 5px; box-sizing: border-box;"></div>
-        <span class="button teal engines" id="moegirl" onclick="moegirl()">萌娘百科</span>
-        <span class="button teal engines" id="dnspod" onclick="dnspod()">DNSPod 域名注册</span>
+        <span class="button teal engines" id="moegirl" onclick="engine_id = 9;">萌娘百科</span>
+        <span class="button teal engines" id="dnspod" onclick="engine_id = 10;">DNSPod 域名注册</span>
     </div>
     <div class="holders engines_holders" id="enghld_5">
         <div style="height: 5px; box-sizing: border-box;"></div>
-        <span class="button teal engines" id="wanwang" onclick="wanwang()">万网域名注册</span>
-        <span class="button teal engines" id="zhihu" onclick="zhihu()">知乎</span>
-        <span class="button teal engines" id="bilibili" onclick="bilibili()">哔哩哔哩</span>
+        <span class="button teal engines" id="wanwang" onclick="engine_id = 11;">万网域名注册</span>
+        <span class="button teal engines" id="zhihu" onclick="engine_id = 12;">知乎</span>
+        <span class="button teal engines" id="bilibili" onclick="engine_id = 13;">哔哩哔哩</span>
     </div>
     <div class="holders engines_holders" id="enghld_6">
         <div style="height: 5px; box-sizing: border-box;"></div>
-        <span class="button teal engines" id="luogu" onclick="luogu()">洛谷</span>
-        <span class="button teal engines" id="csdn" onclick="csdn()">CSDN</span>
-        <span class="button teal engines" id="taobao" onclick="taobao()">淘宝网</span>
+        <span class="button teal engines" id="luogu" onclick="engine_id = 14;">洛谷</span>
+        <span class="button teal engines" id="csdn" onclick="engine_id = 15;">CSDN</span>
+        <span class="button teal engines" id="taobao" onclick="engine_id = 16;">淘宝网</span>
     </div>
     <div class="holders engines_holders" id="enghld_7">
         <div style="height: 5px; box-sizing: border-box;"></div>
-        <span class="button teal engines" id="jd" onclick="jd()">京东</span>
-        <span class="button teal engines" id="yhd" onclick="yhd()">1号店</span>
-        <span class="button teal engines" id="tmall" onclick="tmall()">天猫</span>
+        <span class="button teal engines" id="jd" onclick="engine_id = 17;">京东</span>
+        <span class="button teal engines" id="yhd" onclick="engine_id = 18;">1号店</span>
+        <span class="button teal engines" id="tmall" onclick="engine_id = 19;">天猫</span>
     </div>
     <div class="holders">
         <div style="height: 5px; box-sizing: border-box;"></div>
@@ -193,106 +193,10 @@
                 $(".engines_holders").css("display", "block");
             }
         }
-        function baidu() {
-            engine_id = 0;
+        $('.engines').click(function () {
             $(".engines").removeClass("reversal");
-            $("#baidu").addClass("reversal");
-        }
-        function bing() {
-            engine_id = 1;
-            $(".engines").removeClass("reversal");
-            $("#bing").addClass("reversal");
-        }
-        function bing_gob() {
-            engine_id = 2;
-            $(".engines").removeClass("reversal");
-            $("#bing_gob").addClass("reversal");
-        }
-        function _360() {
-            engine_id = 3;
-            $(".engines").removeClass("reversal");
-            $("#_360").addClass("reversal");
-        }
-        function sogou() {
-            engine_id = 4;
-            $(".engines").removeClass("reversal");
-            $("#sogou").addClass("reversal");
-        }
-        function github() {
-            engine_id = 5;
-            $(".engines").removeClass("reversal");
-            $("#github").addClass("reversal");
-        }
-        function gitee() {
-            engine_id = 6;
-            $(".engines").removeClass("reversal");
-            $("#gitee").addClass("reversal");
-        }
-        function oschina() {
-            engine_id = 7;
-            $(".engines").removeClass("reversal");
-            $("#oschina").addClass("reversal");
-        }
-        function youdao() {
-            engine_id = 8;
-            $(".engines").removeClass("reversal");
-            $("#youdao").addClass("reversal");
-        }
-        function moegirl() {
-            engine_id = 9;
-            $(".engines").removeClass("reversal");
-            $("#moegirl").addClass("reversal");
-        }
-        function dnspod() {
-            engine_id = 10;
-            $(".engines").removeClass("reversal");
-            $("#dnspod").addClass("reversal");
-        }
-        function wanwang() {
-            engine_id = 11;
-            $(".engines").removeClass("reversal");
-            $("#wanwang").addClass("reversal");
-        }
-        function zhihu() {
-            engine_id = 12;
-            $(".engines").removeClass("reversal");
-            $("#zhihu").addClass("reversal");
-        }
-        function bilibili() {
-            engine_id = 13;
-            $(".engines").removeClass("reversal");
-            $("#bilibili").addClass("reversal");
-        }
-        function luogu() {
-            engine_id = 14;
-            $(".engines").removeClass("reversal");
-            $("#luogu").addClass("reversal");
-        }
-        function csdn() {
-            engine_id = 15;
-            $(".engines").removeClass("reversal");
-            $("#csdn").addClass("reversal");
-        }
-        function taobao() {
-            engine_id = 16;
-            $(".engines").removeClass("reversal");
-            $("#taobao").addClass("reversal");
-        }
-        function jd() {
-            engine_id = 17;
-            $(".engines").removeClass("reversal");
-            $("#jd").addClass("reversal");
-        }
-        function yhd() {
-            engine_id = 18;
-            $(".engines").removeClass("reversal");
-            $("#yhd").addClass("reversal");
-        }
-        function tmall() {
-            engine_id = 19;
-            $(".engines").removeClass("reversal");
-            $("#tmall").addClass("reversal");
-        }
+            $(this).addClass("reversal");
+        })
     </script>
 </body>
 
