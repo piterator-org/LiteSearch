@@ -1,0 +1,343 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="css/quligem.css" rel="stylesheet" />
+    <script src="https://static.piterator.com/node_modules/jquery/dist/jquery.min.js"></script>
+    <title>Lite Search - 轻搜索</title>
+    <style>
+        .holders{
+            position: relative;
+            height: 42px;
+            min-width: 360px;
+            width: 40%;
+            margin: auto;
+            text-align: center;
+        }
+        #search_box{
+            height: 42px;
+            width: 100%;
+            display: block;
+            margin-top: .6em;
+            border-radius: 0.8em;
+            border: 1.5px solid rgb(0,181,173);
+            color: rgb(0,181,173);
+            padding-left: 12px;
+            padding-right: 96px;
+            box-sizing: border-box;
+            font-weight: 100;
+            outline: none;
+        }
+        #search_btn{
+            height: 42px;
+            width: 88px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            border: 1.5px solid rgb(0,181,173);
+            box-sizing: border-box;
+            font-weight: 100;
+            border-radius: 0px 12px 12px 0px;
+        }
+        .engines{
+            height: 42px;
+            margin-top: .6em;
+            border: 1.5px solid rgb(0,181,173);
+            box-sizing: border-box;
+            font-weight: 100;
+        }
+        #engines_fold{
+            height: 42px;
+            margin-top: .6em;
+            width: 360px;
+            border: 1.5px solid rgb(0,181,173);
+            box-sizing: border-box;
+            font-weight: 100;
+        }
+        .engines_holders{
+            height: 47px;
+        }
+        .github_btn{
+            position: relative;
+            top: 5.5px;
+        }
+    </style>
+</head>
+<body onkeypress="if(event.keyCode==13)start()" style="position: relative">
+    <div style="height: 88px; box-sizing: border-box;"></div>
+    <h1 class="header teal center">轻搜索 Lite Search</h1>
+    <div class="holders">
+        <input id="search_box" name="search_box" placeholder="搜索无需繁琐" />
+        <span class="button teal reversal" id="search_btn" onclick="start()">开始</span>
+    </div>
+    <div class="holders engines_holders" id="enghld_1">
+        <div style="height: 5px; box-sizing: border-box;"></div>
+        <span class="button teal engines" id="baidu" onclick="baidu()">百度</span>
+        <span class="button teal engines" id="bing" onclick="bing()">必应国内版</span>
+        <span class="button teal engines" id="bing_gob" onclick="bing_gob()">必应国际版</span>
+    </div>
+    <div class="holders engines_holders" id="enghld_2">
+        <div style="height: 5px; box-sizing: border-box;"></div>
+        <span class="button teal engines" id="_360" onclick="_360()">360搜索</span>
+        <span class="button teal engines" id="sogou" onclick="sogou()">搜狗搜索</span>
+        <span class="button teal engines" id="github" onclick="github()">GitHub</span>
+    </div>
+    <div class="holders engines_holders" id="enghld_3">
+        <div style="height: 5px; box-sizing: border-box;"></div>
+        <span class="button teal engines" id="gitee" onclick="gitee()">码云 Gitee</span>
+        <span class="button teal engines" id="oschina" onclick="oschina()">OSCHINA</span>
+        <span class="button teal engines" id="youdao" onclick="youdao()">有道词典</span>
+    </div>
+    <div class="holders engines_holders" id="enghld_4">
+        <div style="height: 5px; box-sizing: border-box;"></div>
+        <span class="button teal engines" id="moegirl" onclick="moegirl()">萌娘百科</span>
+        <span class="button teal engines" id="dnspod" onclick="dnspod()">DNSPod 域名注册</span>
+    </div>
+    <div class="holders engines_holders" id="enghld_5">
+        <div style="height: 5px; box-sizing: border-box;"></div>
+        <span class="button teal engines" id="wanwang" onclick="wanwang()">万网域名注册</span>
+        <span class="button teal engines" id="zhihu" onclick="zhihu()">知乎</span>
+        <span class="button teal engines" id="bilibili" onclick="bilibili()">哔哩哔哩</span>
+    </div>
+    <div class="holders engines_holders" id="enghld_6">
+        <div style="height: 5px; box-sizing: border-box;"></div>
+        <span class="button teal reversal engines" id="luogu" onclick="luogu()">洛谷</span>
+        <span class="button teal engines" id="csdn" onclick="csdn()">CSDN</span>
+        <span class="button teal engines" id="taobao" onclick="taobao()">淘宝网</span>
+    </div>
+    <div class="holders engines_holders" id="enghld_7">
+        <div style="height: 5px; box-sizing: border-box;"></div>
+        <span class="button teal engines" id="jd" onclick="jd()">京东</span>
+        <span class="button teal engines" id="yhd" onclick="yhd()">1号店</span>
+        <span class="button teal engines" id="tmall" onclick="tmall()">天猫</span>
+    </div>
+    <div class="holders">
+        <div style="height: 5px; box-sizing: border-box;"></div>
+        <span class="button teal reversal" id="engines_fold" onclick="engines_fold()">折叠</span>
+    </div>
+    <div class="teal">
+        <div style="height: 10px; box-sizing: border-box;"></div>
+        <p style="text-align: center">
+            Copyright &copy; <a href="https://www.piterator.com/" class="link teal" target="_blank">Piterator</a> 2017 - 2020. 
+            <br />
+            All rights reserved.
+            <br />
+            沪ICP备19004827号-4
+            <br />
+            <a href="sitemap.xml" class="link teal">SiteMap</a>
+            <div style="display: none"><img src="https://www.hit-counts.com/counter.php?t=MTQ0ODA1NA==" alt="hit-counts" /></div>
+        </p>
+    </div>
+    <script>
+        $(function(){
+            if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                window.location.href = "https://m.litesearch.cn/";
+            }
+        });
+        /*
+        function box_onfocus(){
+            $('#search_box').css('border','2px solid rgb(0,181,173)');
+            $('#search_btn').css('border','2px solid rgb(0,181,173)');
+            $('#search_box').css('border-radius','42px');
+            $('#search_btn').css('border-radius',' 0px 42px 42px 0px');
+        }
+        function box_onblur(){
+            $('#search_box').css('border','1.5px solid rgb(0,181,173)');
+            $('#search_tnx').css('border','1.5px solid rgb(0,181,173)');
+            $('#search_box').css('border-radius','12px');
+            $('#search_btn').css('border-radius',' 0px 12px 12px 0px');
+        }
+        */
+        var engine_id=14,engine_holder_id=6,has_folded=0;
+        function start(){
+            var url_jump;
+            if(engine_id==0)url_jump="https://www.baidu.com/s?ie=UTF-8&wd="+document.getElementById("search_box").value;
+            else if(engine_id==1)url_jump="https://cn.bing.com/search?ensearch=0&q="+document.getElementById("search_box").value;
+            else if(engine_id==2)url_jump="https://cn.bing.com/search?ensearch=1&q="+document.getElementById("search_box").value;
+            else if(engine_id==3)url_jump="https://www.so.com/s?q="+document.getElementById("search_box").value;
+            else if(engine_id==4)url_jump="https://www.sogou.com/web?query="+document.getElementById("search_box").value;
+            else if(engine_id==5)url_jump="https://github.com/search?q="+document.getElementById("search_box").value;
+            else if(engine_id==6)url_jump="https://search.gitee.com/?q="+document.getElementById("search_box").value;
+            else if(engine_id==7)url_jump="https://www.oschina.net/search?scope=all&q="+document.getElementById("search_box").value;
+            else if(engine_id==8)url_jump="https://www.youdao.com/w/"+document.getElementById("search_box").value;
+            else if(engine_id==9)url_jump="https://zh.moegirl.org/index.php?search="+document.getElementById("search_box").value;
+            else if(engine_id==10)url_jump="https://buy.cloud.tencent.com/domain?domain="+document.getElementById("search_box").value;
+            else if(engine_id==11)url_jump="https://wanwang.aliyun.com/domain/searchresult/#/?keyword="+document.getElementById("search_box").value;
+            else if(engine_id==12)url_jump="https://www.zhihu.com/search?type=content&q="+document.getElementById("search_box").value;
+            else if(engine_id==13)url_jump="https://search.bilibili.com/all?keyword="+document.getElementById("search_box").value;
+            else if(engine_id==14)url_jump="https://www.luogu.com.cn/problem/list?keyword="+document.getElementById("search_box").value;
+            else if(engine_id==15)url_jump="https://so.csdn.net/so/search/s.do?q="+document.getElementById("search_box").value;
+            else if(engine_id==16)url_jump="https://s.taobao.com/search?q="+document.getElementById("search_box").value;
+            else if(engine_id==17)url_jump="https://search.jd.com/Search?enc=utf-8&keyword="+document.getElementById("search_box").value+"&wq="+document.getElementById("search_box").value;
+            else if(engine_id==18)url_jump="https://search.yhd.com/c0-0/k"+document.getElementById("search_box").value;
+            else if(engine_id==19)url_jump="https://list.tmall.com/search_product.htm?q="+document.getElementById("search_box").value;
+            else url_jump="https://www.piterator.com/";
+            window.open(url_jump.replace(/\+/g,'%2B'),"_blank");
+        }
+        function engines_fold(){
+            has_folded=1-has_folded;
+            if(has_folded){
+                $("#engines_fold").html("展开");
+                $("#engines_fold").removeClass("reversal");
+                $(".engines_holders").css("display","none");
+                $("#enghld_"+engine_holder_id).css("display","block");
+            }else{
+                $("#engines_fold").html("折叠");
+                $("#engines_fold").addClass("reversal");
+                $(".engines_holders").css("display","block");
+            }
+        }
+        function baidu(){
+            engine_id=0;engine_holder_id=1;
+            $(".engines").removeClass("reversal");
+            $("#baidu").addClass("reversal");
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+        }
+        function bing(){
+            engine_id=1;engine_holder_id=1;
+            $(".engines").removeClass("reversal");
+            $("#bing").addClass("reversal");
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+        }
+        function bing_gob(){
+            engine_id=2;engine_holder_id=1;
+            $(".engines").removeClass("reversal");
+            $("#bing_gob").addClass("reversal");
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+        }
+        function _360(){
+            engine_id=3;engine_holder_id=2;
+            $(".engines").removeClass("reversal");
+            $("#_360").addClass("reversal");
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+        }
+        function sogou(){
+            engine_id=4;engine_holder_id=2;
+            $(".engines").removeClass("reversal");
+            $("#sogou").addClass("reversal");
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+        }
+        function github(){
+            engine_id=5;engine_holder_id=2;
+            $(".engines").removeClass("reversal");
+            $("#github").addClass("reversal");
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+        }
+        function gitee(){
+            engine_id=6;engine_holder_id=3;
+            $(".engines").removeClass("reversal");
+            $("#gitee").addClass("reversal");
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+        }
+        function oschina(){
+            engine_id=7;engine_holder_id=3;
+            $(".engines").removeClass("reversal");
+            $("#oschina").addClass("reversal");
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+        }
+        function youdao(){
+            engine_id=8;engine_holder_id=3;
+            $(".engines").removeClass("reversal");
+            $("#youdao").addClass("reversal");
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+        }
+        function moegirl(){
+            engine_id=9;engine_holder_id=4;
+            $(".engines").removeClass("reversal");
+            $("#moegirl").addClass("reversal");
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+        }
+        function dnspod(){
+            engine_id=10;engine_holder_id=4;
+            $(".engines").removeClass("reversal");
+            $("#dnspod").addClass("reversal");
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+        }
+        function wanwang(){
+            engine_id=11;engine_holder_id=5;
+            $(".engines").removeClass("reversal");
+            $("#wanwang").addClass("reversal");
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+        }
+        function zhihu(){
+            engine_id=12;engine_holder_id=5;
+            $(".engines").removeClass("reversal");
+            $("#zhihu").addClass("reversal");
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+        }
+        function bilibili(){
+            engine_id=13;engine_holder_id=5;
+            $(".engines").removeClass("reversal");
+            $("#bilibili").addClass("reversal");
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+        }
+        function luogu(){
+            engine_id=14;engine_holder_id=6;
+            $(".engines").removeClass("reversal");
+            $("#luogu").addClass("reversal");
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+        }
+        function csdn(){
+            engine_id=15;engine_holder_id=6;
+            $(".engines").removeClass("reversal");
+            $("#csdn").addClass("reversal");
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+        }
+        function taobao(){
+            engine_id=16;engine_holder_id=6;
+            $(".engines").removeClass("reversal");
+            $("#taobao").addClass("reversal");
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+        }
+        function jd(){
+            engine_id=17;engine_holder_id=7;
+            $(".engines").removeClass("reversal");
+            $("#jd").addClass("reversal");
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+        }
+        function yhd(){
+            engine_id=18;engine_holder_id=7;
+            $(".engines").removeClass("reversal");
+            $("#yhd").addClass("reversal");
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+        }
+        function tmall(){
+            engine_id=19;engine_holder_id=7;
+            $(".engines").removeClass("reversal");
+            $("#tmall").addClass("reversal");
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e="+engine_id);
+        }
+        window.onload = function(){//Zhe duan dai ma you dian gui chu, qing wu shan zi xiu gai!!!
+            history.replaceState({}, "Lite Search - 轻搜索", "https://litesearch.cn/?e=14");
+            function getUrlParam(name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                var r = window.location.search.substr(1).match(reg);
+                if (r != null) return unescape(r[2]);
+                return null;
+            }
+            var reg=/^\s*$/,url_e=getUrlParam("e");
+            if(url_e==0)baidu(),engines_fold();
+            else if(url_e==1)bing(),engines_fold();
+            else if(url_e==2)bing_gob(),engines_fold();
+            else if(url_e==3)_360(),engines_fold();
+            else if(url_e==4)sogou(),engines_fold();
+            else if(url_e==5)github(),engines_fold();
+            else if(url_e==6)gitee(),engines_fold();
+            else if(url_e==7)oschina(),engines_fold();
+            else if(url_e==8)youdao(),engines_fold();
+            else if(url_e==9)moegirl(),engines_fold();
+            else if(url_e==10)dnspod(),engines_fold();
+            else if(url_e==11)wanwang(),engines_fold();
+            else if(url_e==12)zhihu(),engines_fold();
+            else if(url_e==13)bilibili(),engines_fold();
+            else if(url_e==14)luogu(),engines_fold();
+            else if(url_e==15)csdn(),engines_fold();
+            else if(url_e==16)taobao(),engines_fold();
+            else if(url_e==17)jd(),engines_fold();
+            else if(url_e==18)yhd(),engines_fold();
+            else if(url_e==19)tmall(),engines_fold();
+        }
+    </script>
+</body>
+</html>
