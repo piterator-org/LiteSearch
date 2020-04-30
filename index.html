@@ -316,26 +316,8 @@
                 return null;
             }
             var reg=/^\s*$/,url_e=getUrlParam("e");
-            if(url_e==0)baidu(),engines_fold();
-            else if(url_e==1)bing(),engines_fold();
-            else if(url_e==2)bing_gob(),engines_fold();
-            else if(url_e==3)_360(),engines_fold();
-            else if(url_e==4)sogou(),engines_fold();
-            else if(url_e==5)github(),engines_fold();
-            else if(url_e==6)gitee(),engines_fold();
-            else if(url_e==7)oschina(),engines_fold();
-            else if(url_e==8)youdao(),engines_fold();
-            else if(url_e==9)moegirl(),engines_fold();
-            else if(url_e==10)dnspod(),engines_fold();
-            else if(url_e==11)wanwang(),engines_fold();
-            else if(url_e==12)zhihu(),engines_fold();
-            else if(url_e==13)bilibili(),engines_fold();
-            else if(url_e==14)luogu(),engines_fold();
-            else if(url_e==15)csdn(),engines_fold();
-            else if(url_e==16)taobao(),engines_fold();
-            else if(url_e==17)jd(),engines_fold();
-            else if(url_e==18)yhd(),engines_fold();
-            else if(url_e==19)tmall(),engines_fold();
+            [baidu, bing, bing_gob, _360, sogou, github, gitee, oschina, youdao, moegirl, dnspod, wanwang, zhihu, bilibili, luogu, csdn, taobao, jd, yhd, tmall][url_e]();
+            engines_fold();
         }
     </script>
 </body>
